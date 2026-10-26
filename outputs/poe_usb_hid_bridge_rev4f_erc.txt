@@ -1,0 +1,189 @@
+WARNING: KICAD6_SYMBOL_DIR environment variable is missing, so the default KiCad symbol libraries won't be searched. @ [C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\<frozen importlib._bootstrap_external>:1023=>C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\<frozen importlib._bootstrap>:488]
+WARNING: KICAD7_SYMBOL_DIR environment variable is missing, so the default KiCad symbol libraries won't be searched. @ [C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\<frozen importlib._bootstrap_external>:1023=>C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\<frozen importlib._bootstrap>:488]
+WARNING: KICAD8_SYMBOL_DIR environment variable is missing, so the default KiCad symbol libraries won't be searched. @ [C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\<frozen importlib._bootstrap_external>:1023=>C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\<frozen importlib._bootstrap>:488]
+WARNING: KICAD9_SYMBOL_DIR environment variable is missing, so the default KiCad symbol libraries won't be searched. @ [C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\<frozen importlib._bootstrap_external>:1023=>C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\<frozen importlib._bootstrap>:488]
+WARNING: fp-lib-table file was not found. Component footprints are not available.
+WARNING: fp-lib-table file was not found. Component footprints are not available.
+WARNING: fp-lib-table file was not found. Component footprints are not available.
+WARNING: fp-lib-table file was not found. Component footprints are not available.
+ERC INFO: No errors or warnings found while running ERC.
+
+WARNING: Missing tag on HR871150C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:45.
+WARNING: Random tag RQGdf8zpfi generated for HR871150C.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:73.
+WARNING: Random tag c85lWCp284 generated for R.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:74.
+WARNING: Random tag fL5LOzGN2b generated for R.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:84.
+WARNING: Random tag Z_H0tHX2ni generated for R.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:85.
+WARNING: Random tag M_OyfqIpKU generated for R.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:96.
+WARNING: Random tag 0rTomPDtSz generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:96.
+WARNING: Random tag LE14JvjoIt generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:102.
+WARNING: Random tag dVTOPp07Bt generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:109.
+WARNING: Random tag ukhPpgUXoa generated for C.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:118.
+WARNING: Random tag ENqV9RyggE generated for R.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:124.
+WARNING: Random tag KisGzqkHKm generated for C.
+WARNING: Missing tag on MB6S_MDD instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag ZrZItrbQWe generated for MB6S_MDD.
+WARNING: Missing tag on MB6S_MDD instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag qscOQtXLli generated for MB6S_MDD.
+WARNING: Missing tag on D_Zener instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag t3v0kA_j3S generated for D_Zener.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag ZCOOHt43hl generated for C.
+WARNING: Missing tag on Ag9905-LPB instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag 7jDpz5jaep generated for Ag9905-LPB.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag WO2HweOioR generated for R.
+WARNING: Missing tag on C_Polarized instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag j_BFVTjAqy generated for C_Polarized.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag Ov9tDvHN2e generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag 4yb4x3NUjn generated for C.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag tLjix1tliY generated for R.
+WARNING: Missing tag on FerriteBead instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag HK_L7Xotup generated for FerriteBead.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag JP5enQ8Ps3 generated for C.
+WARNING: Missing tag on D_Zener instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag Dlj9XGtS7a generated for D_Zener.
+WARNING: Missing tag on TestPoint instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:129.
+WARNING: Random tag 9AORxMSaOT generated for TestPoint.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26.
+WARNING: Random tag 219tPvlTSm generated for C.
+WARNING: Missing tag on TLV75733PDRV instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ldo_3v3.py:25.
+WARNING: Random tag iUzaEoxrW8 generated for TLV75733PDRV.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ldo_3v3.py:39.
+WARNING: Random tag vSWBehqwxa generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ldo_3v3.py:46.
+WARNING: Random tag O03ik2GM9e generated for C.
+WARNING: Missing tag on W55RP20 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:80.
+WARNING: Random tag mmm88XKw5P generated for W55RP20.
+WARNING: Missing tag on FerriteBead instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:138.
+WARNING: Random tag 6pa19e73CC generated for FerriteBead.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag PCwiAcgEeg generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag m9aaX6f655 generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag LhtlJF8PD7 generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag 0_AyavC5Lp generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag ufjowkN7aF generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag LdIehcR1Hj generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag scLnF3Z5yP generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag P6srDBwO3R generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag IC277M6T3Q generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag Sl0fbyQfBU generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag FBffxzhWGb generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag B1jom_AgV9 generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag CV9kcdSdER generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag lCYTyv_FdP generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag R7jbTLNYA3 generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag UXIRRBzZUS generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag 3Zd8tYuYwB generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag fgMqgiupVk generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag PilKvwWVI4 generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag loodN1HY3J generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag EtTLr5zb6V generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag CkxwHUNUxC generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag ER59uTC05g generated for C.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:69.
+WARNING: Random tag Ec6eHh72lc generated for R.
+WARNING: Missing tag on Crystal_GND24 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:175.
+WARNING: Random tag 2BuVKGM5sm generated for Crystal_GND24.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag xGiP2wpnQv generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag oo3dXsfyIG generated for C.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:69.
+WARNING: Random tag _4Vd6QhrsH generated for R.
+WARNING: Missing tag on Crystal_GND24 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:189.
+WARNING: Random tag 9MW8vt7_GD generated for Crystal_GND24.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag OF7tMj4UT2 generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61.
+WARNING: Random tag 1uIpofPPED generated for C.
+WARNING: Missing tag on Conn_01x04 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:206.
+WARNING: Random tag TkzhoVTo6Y generated for Conn_01x04.
+WARNING: Missing tag on TPS2553 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:45.
+WARNING: Random tag prowDhMU40 generated for TPS2553.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:55.
+WARNING: Random tag BWDOvhsG6L generated for R.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:60.
+WARNING: Random tag 7cDop1MkT_ generated for R.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:66.
+WARNING: Random tag pC4YYzslqr generated for C.
+WARNING: Missing tag on C_Polarized instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:72.
+WARNING: Random tag nFKj89WTtQ generated for C_Polarized.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:78.
+WARNING: Random tag VORHiZ9fed generated for C.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:83.
+WARNING: Random tag 5zfRH4c5go generated for C.
+WARNING: Missing tag on USBLC6-2SC6 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:89.
+WARNING: Random tag gZxUBKSWDx generated for USBLC6-2SC6.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:100.
+WARNING: Random tag tynJmpraCt generated for R.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:105.
+WARNING: Random tag VJAMfM4KFJ generated for R.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:111.
+WARNING: Random tag guJ31LZWyf generated for R.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:116.
+WARNING: Random tag XG5dHPhc5v generated for R.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:122.
+WARNING: Random tag xVOeTsxweP generated for R.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:127.
+WARNING: Random tag vi4UJinpSX generated for R.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:132.
+WARNING: Random tag CCc723rZYh generated for C.
+WARNING: Missing tag on USB_A instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:138.
+WARNING: Random tag e_qEdZy3wu generated for USB_A.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:148.
+WARNING: Random tag rLfS2AZHYJ generated for R.
+WARNING: Missing tag on C instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:153.
+WARNING: Random tag _Ft2DiH9gn generated for C.
+WARNING: Missing tag on LED instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\status_led.py:36.
+WARNING: Random tag Hr8zIMBqFe generated for LED.
+WARNING: Missing tag on R instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\status_led.py:43.
+WARNING: Random tag 1uktR4vRnE generated for R.
+WARNING: Missing tag on  instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\<frozen importlib._bootstrap>:488.
+WARNING: Missing tag on poe_pd_module1 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\__main__.py:70.
+WARNING: Missing tag on usb_host_port1 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\__main__.py:77.
+WARNING: Missing tag on status_led1 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\__main__.py:79.
+WARNING: Missing tag on ldo_3v3_1 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\__main__.py:72.
+WARNING: Missing tag on ethernet_magjack1 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\__main__.py:67.
+WARNING: Missing tag on mcu_w55rp20_1 instantiated at C:\Users\simon\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\__main__.py:73.
+INFO: 177 warnings found while generating netlist.
+INFO: 0 errors found while generating netlist.
+
+INFO: 177 warnings found while generating XML.
+INFO: 0 errors found while generating XML.
+

@@ -1,0 +1,559 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T13:47:08",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "poe_usb_hid_bridge_rev4e.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Abschnitt auf Edge.Cuts",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 119.0
+                    },
+                    "uuid": "157fa4ce-d528-437d-996f-ecd3b9adc07f"
+                },
+                {
+                    "description": "Abschnitt von J1 auf F.Silkscreen",
+                    "pos": {
+                        "x": 99.9,
+                        "y": 101.9
+                    },
+                    "uuid": "cf6c68ba-ccff-4099-aa93-8dbebf021edb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Abschnitt auf Edge.Cuts",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 119.0
+                    },
+                    "uuid": "157fa4ce-d528-437d-996f-ecd3b9adc07f"
+                },
+                {
+                    "description": "Abschnitt von J1 auf F.Silkscreen",
+                    "pos": {
+                        "x": 99.9,
+                        "y": 118.1
+                    },
+                    "uuid": "fe27d6da-acf8-472a-be3c-84ea6d356999"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Abschnitt auf Edge.Cuts",
+                    "pos": {
+                        "x": 180.0,
+                        "y": 101.0
+                    },
+                    "uuid": "b288e2f8-369a-498b-81d9-9e11a1104a78"
+                },
+                {
+                    "description": "Abschnitt von J2 auf F.Silkscreen",
+                    "pos": {
+                        "x": 172.3,
+                        "y": 102.25
+                    },
+                    "uuid": "0cd29fdb-3df6-41d2-8e16-63bb2f10b863"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Abschnitt auf Edge.Cuts",
+                    "pos": {
+                        "x": 180.0,
+                        "y": 101.0
+                    },
+                    "uuid": "b288e2f8-369a-498b-81d9-9e11a1104a78"
+                },
+                {
+                    "description": "Abschnitt von J2 auf F.Silkscreen",
+                    "pos": {
+                        "x": 172.3,
+                        "y": 117.75
+                    },
+                    "uuid": "1a68bd21-1a47-4e60-b632-0d347bb07376"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Abschnitt auf Edge.Cuts",
+                    "pos": {
+                        "x": 179.0,
+                        "y": 120.0
+                    },
+                    "uuid": "ce3aa5f0-6353-4d45-83df-46a791c0f17f"
+                },
+                {
+                    "description": "Referenzfeld von J3",
+                    "pos": {
+                        "x": 159.4,
+                        "y": 120.0
+                    },
+                    "uuid": "444be0a9-311c-4f62-8e5e-e8073f864a20"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Footprint \"HanRun_HR871150C\" stimmt nicht mit Kopie in Bibliothek \"poe_usb_hid_bridge\" überein.",
+            "items": [
+                {
+                    "description": "Footprint J1",
+                    "pos": {
+                        "x": 110.8,
+                        "y": 110.0
+                    },
+                    "uuid": "e63ab35a-e555-44b7-ae25-b0751f4e946a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon von J2 auf F.Silkscreen",
+                    "pos": {
+                        "x": 164.0,
+                        "y": 114.4
+                    },
+                    "uuid": "4067523d-9a20-45b8-bf31-c42fdf6e6813"
+                },
+                {
+                    "description": "Abschnitt von D11 auf F.Silkscreen",
+                    "pos": {
+                        "x": 163.55,
+                        "y": 115.2
+                    },
+                    "uuid": "757aba46-5d59-40f9-b90d-6d001814ed44"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Referenzfeld von U5",
+                    "pos": {
+                        "x": 156.5,
+                        "y": 110.0
+                    },
+                    "uuid": "729ac992-cc38-43ae-bd08-8b3e9a0c3645"
+                },
+                {
+                    "description": "Pad 69 [GND] von U5 auf F.Cu",
+                    "pos": {
+                        "x": 156.5,
+                        "y": 110.0
+                    },
+                    "uuid": "fff65f3a-9fe7-45c2-a71b-dd9651733e4f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Referenzfeld von J2",
+                    "pos": {
+                        "x": 166.2,
+                        "y": 110.0
+                    },
+                    "uuid": "612e7b53-76c6-4375-9667-206cf3c571e5"
+                },
+                {
+                    "description": "Pad 3 [USB_DP] von J2 auf F.Cu",
+                    "pos": {
+                        "x": 166.2,
+                        "y": 109.0
+                    },
+                    "uuid": "6b6144d1-d745-4be6-a0c8-9c2170a2874d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                },
+                {
+                    "description": "Abschnitt von C40 auf B.Silkscreen",
+                    "pos": {
+                        "x": 162.692164,
+                        "y": 113.06
+                    },
+                    "uuid": "79e033ef-568d-426d-bb7e-c7f6ab882716"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Abschnitt von J3 auf B.Silkscreen",
+                    "pos": {
+                        "x": 154.32,
+                        "y": 116.25
+                    },
+                    "uuid": "3ad8f6d5-f9a8-49be-9558-2e56e420cac2"
+                },
+                {
+                    "description": "Abschnitt von C64 auf B.Silkscreen",
+                    "pos": {
+                        "x": 163.192164,
+                        "y": 116.36
+                    },
+                    "uuid": "845a82f1-3663-414c-bff0-531216701089"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Abschnitt von C64 auf B.Silkscreen",
+                    "pos": {
+                        "x": 163.192164,
+                        "y": 115.64
+                    },
+                    "uuid": "335be822-2e98-4770-9309-5c2303d3eff4"
+                },
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Abschnitt von C52 auf B.Silkscreen",
+                    "pos": {
+                        "x": 162.692164,
+                        "y": 114.16
+                    },
+                    "uuid": "26d210c6-02e9-4f49-949c-903bd15816ee"
+                },
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                },
+                {
+                    "description": "Abschnitt von C45 auf B.Silkscreen",
+                    "pos": {
+                        "x": 162.692164,
+                        "y": 114.54
+                    },
+                    "uuid": "77d8f74f-1d3f-4d1d-a664-78787d8c0083"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                },
+                {
+                    "description": "Abschnitt von C45 auf B.Silkscreen",
+                    "pos": {
+                        "x": 162.692164,
+                        "y": 115.26
+                    },
+                    "uuid": "e7870655-74c8-41f5-b992-5d8c1d0801a4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                },
+                {
+                    "description": "Pad 2 [GND] von C40 auf B.Cu",
+                    "pos": {
+                        "x": 163.28,
+                        "y": 112.7
+                    },
+                    "uuid": "1c459fbf-ed4e-48cf-9dce-556b28ae0758"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Abschnitt von J3 auf B.Silkscreen",
+                    "pos": {
+                        "x": 154.32,
+                        "y": 116.25
+                    },
+                    "uuid": "3ad8f6d5-f9a8-49be-9558-2e56e420cac2"
+                },
+                {
+                    "description": "Pad 1 [+3V3] von C64 auf B.Cu",
+                    "pos": {
+                        "x": 162.82,
+                        "y": 116.0
+                    },
+                    "uuid": "89dacafe-233c-4cb5-b99d-f915f3e9907b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Abschnitt von J3 auf B.Silkscreen",
+                    "pos": {
+                        "x": 154.32,
+                        "y": 116.25
+                    },
+                    "uuid": "3ad8f6d5-f9a8-49be-9558-2e56e420cac2"
+                },
+                {
+                    "description": "Pad 2 [GND] von C64 auf B.Cu",
+                    "pos": {
+                        "x": 163.78,
+                        "y": 116.0
+                    },
+                    "uuid": "76ba5509-c65d-4b26-963b-9b9cde858830"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint-Text von J3 (3 SWDIO)",
+                    "pos": {
+                        "x": 160.67,
+                        "y": 113.85
+                    },
+                    "uuid": "aad81ec7-aec6-462a-a540-af13183f6d88"
+                },
+                {
+                    "description": "Pad 2 [LED_DIN_R] von R38 auf B.Cu",
+                    "pos": {
+                        "x": 160.51,
+                        "y": 115.4
+                    },
+                    "uuid": "3f423442-7ec5-4cf5-9ecc-96efb4010247"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                },
+                {
+                    "description": "Pad 2 [GND] von C64 auf B.Cu",
+                    "pos": {
+                        "x": 163.78,
+                        "y": 116.0
+                    },
+                    "uuid": "76ba5509-c65d-4b26-963b-9b9cde858830"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                },
+                {
+                    "description": "Pad 2 [GND] von C52 auf B.Cu",
+                    "pos": {
+                        "x": 163.28,
+                        "y": 113.8
+                    },
+                    "uuid": "e903092c-ad99-41e5-b38f-2e8834894896"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                },
+                {
+                    "description": "Pad 2 [GND] von C45 auf B.Cu",
+                    "pos": {
+                        "x": 163.28,
+                        "y": 114.9
+                    },
+                    "uuid": "541ab5a5-d778-402c-949a-c34ab87f6626"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint-Text von J3 (4 3V3)",
+                    "pos": {
+                        "x": 163.21,
+                        "y": 114.35
+                    },
+                    "uuid": "6777d639-9e9b-4bae-b093-bc7198bc6830"
+                },
+                {
+                    "description": "Pad 1 [+3V3] von C64 auf B.Cu",
+                    "pos": {
+                        "x": 162.82,
+                        "y": 116.0
+                    },
+                    "uuid": "89dacafe-233c-4cb5-b99d-f915f3e9907b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

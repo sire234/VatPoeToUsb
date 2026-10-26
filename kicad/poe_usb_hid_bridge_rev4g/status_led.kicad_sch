@@ -1,0 +1,841 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "40eedc74-6637-5c5a-aff4-d0f878944f36")
+	(paper "A3")
+	(title_block
+		(title "PoE to USB HID Bridge – B7 status_led – grüne Status-LED")
+		(date "2026-10-26")
+		(rev "4g")
+		(company "poe_usb_hid_bridge")
+		(comment 1 "Rev 4g, generiert aus outputs/poe_usb_hid_bridge_rev4g.net (SKiDL)")
+		(comment 2 "Bauteile im Sheet verdrahtet; Netze zu anderen Sheets über globale Labels / Power-Symbole")
+	)
+	(lib_symbols
+		(symbol "Device:LED"
+				(pin_numbers
+					(hide yes)
+				)
+				(pin_names
+					(offset 1.016)
+					(hide yes)
+				)
+				(exclude_from_sim no)
+				(in_bom yes)
+				(on_board yes)
+				(in_pos_files yes)
+				(duplicate_pin_numbers_are_jumpers no)
+				(property "Reference" "D"
+					(at 0 2.54 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Value" "LED"
+					(at 0 -2.54 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Footprint" ""
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Datasheet" ""
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Description" "Light emitting diode"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "Sim.Pins" "1=K 2=A"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "ki_keywords" "LED diode"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+					(at 0 0 0)
+					(show_name no)
+					(do_not_autoplace no)
+					(hide yes)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(symbol "LED_0_1"
+					(polyline
+						(pts
+							(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+						)
+						(stroke
+							(width 0)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(polyline
+						(pts
+							(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+						)
+						(stroke
+							(width 0)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(polyline
+						(pts
+							(xy -1.27 0) (xy 1.27 0)
+						)
+						(stroke
+							(width 0)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(polyline
+						(pts
+							(xy -1.27 -1.27) (xy -1.27 1.27)
+						)
+						(stroke
+							(width 0.254)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+					(polyline
+						(pts
+							(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+						)
+						(stroke
+							(width 0.254)
+							(type default)
+						)
+						(fill
+							(type none)
+						)
+					)
+				)
+				(symbol "LED_1_1"
+					(pin passive line
+						(at -3.81 0 0)
+						(length 2.54)
+						(name "K"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "1"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+					(pin passive line
+						(at 3.81 0 180)
+						(length 2.54)
+						(name "A"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+						(number "2"
+							(effects
+								(font
+									(size 1.27 1.27)
+								)
+							)
+						)
+					)
+				)
+				(embedded_fonts no)
+			)
+		(symbol "Device:R"
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(offset 0)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "R"
+						(at 2.032 0 90)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "Value" "R"
+						(at 0 0 90)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "Footprint" ""
+						(at -1.778 0 90)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "Datasheet" ""
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "Description" "Resistor"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "ki_keywords" "R res resistor"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "ki_fp_filters" "R_*"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(symbol "R_0_1"
+						(rectangle
+							(start -1.016 -2.54)
+							(end 1.016 2.54)
+							(stroke
+								(width 0.254)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+					)
+					(symbol "R_1_1"
+						(pin passive line
+							(at 0 3.81 270)
+							(length 1.27)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+						(pin passive line
+							(at 0 -3.81 90)
+							(length 1.27)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "2"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+		(symbol "power:GND"
+					(power global)
+					(pin_numbers
+						(hide yes)
+					)
+					(pin_names
+						(offset 0)
+						(hide yes)
+					)
+					(exclude_from_sim no)
+					(in_bom yes)
+					(on_board yes)
+					(in_pos_files yes)
+					(duplicate_pin_numbers_are_jumpers no)
+					(property "Reference" "#PWR"
+						(at 0 -6.35 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "Value" "GND"
+						(at 0 -3.81 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "Footprint" ""
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "Datasheet" ""
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(property "ki_keywords" "global power"
+						(at 0 0 0)
+						(show_name no)
+						(do_not_autoplace no)
+						(hide yes)
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(symbol "GND_0_1"
+						(polyline
+							(pts
+								(xy 0 0)
+								(xy 0 -1.27)
+								(xy 1.27 -1.27)
+								(xy 0 -2.54)
+								(xy -1.27 -1.27)
+								(xy 0 -1.27)
+							)
+							(stroke
+								(width 0)
+								(type default)
+							)
+							(fill
+								(type none)
+							)
+						)
+					)
+					(symbol "GND_1_1"
+						(pin power_in line
+							(at 0 0 270)
+							(length 0)
+							(name ""
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+							(number "1"
+								(effects
+									(font
+										(size 1.27 1.27)
+									)
+								)
+							)
+						)
+					)
+					(embedded_fonts no)
+				)
+	)
+	(wire
+		(pts
+			(xy 72.39 54.61) (xy 62.23 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71b9e05b-bff9-402c-99be-cf3bdc2f140b")
+	)
+	(wire
+		(pts
+			(xy 80.01 54.61) (xy 99.06 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "baebbf52-c3d9-4f95-b6ca-edf184819613")
+	)
+	(wire
+		(pts
+			(xy 99.06 54.61) (xy 99.06 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "228cdec9-c415-4738-8660-99132c042988")
+	)
+	(wire
+		(pts
+			(xy 99.06 68.58) (xy 99.06 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "047ee953-6ae7-4a56-a596-e5833049195e")
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 99.06 64.77 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "29904656-7d64-5257-b09e-13cf2771ddc7")
+		(property "Reference" "D11"
+			(at 104.14 63.5 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "green"
+			(at 104.14 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric"
+			(at 99.06 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 99.06 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "MEIHUA MHT193CGCT"
+			(at 99.06 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2962098"
+			(at 99.06 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c556bf7b-f602-4519-9f37-de46dbaf76ee")
+		)
+		(pin "2"
+			(uuid "b412c513-9a8f-4bfe-a043-dcbc25ead722")
+		)
+		(instances
+			(project "poe_usb_hid_bridge_rev4g"
+				(path "/ee8c511e-7f1f-5f05-b2b0-f14822b2bff7/364e9637-e1bb-5214-b7e0-18ff27760084"
+					(reference "D11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 76.2 54.61 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "77fbf88e-042b-5095-90a5-abd7425883fd")
+		(property "Reference" "R38"
+			(at 76.2 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330R"
+			(at 76.2 58.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 76.2 54.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 76.2 54.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 76.2 54.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0402WGF3300TCE"
+			(at 76.2 54.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
+			(at 76.2 54.61 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bb462d34-a832-4106-a4c9-78804d0903d2")
+		)
+		(pin "2"
+			(uuid "b4c2a760-bb54-46e1-92d1-489da747438b")
+		)
+		(instances
+			(project "poe_usb_hid_bridge_rev4g"
+				(path "/ee8c511e-7f1f-5f05-b2b0-f14822b2bff7/364e9637-e1bb-5214-b7e0-18ff27760084"
+					(reference "R38")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(rectangle
+		(start 15.24 15.24)
+		(end 200.66 99.06)
+		(stroke
+			(width 0.254)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "af952529-0748-48cf-9820-91a16919e160")
+	)
+	(text "B7 status_led – grüne Status-LED an GPIO28"
+		(exclude_from_sim no)
+		(at 20.32 22.86 0)
+		(effects
+			(font
+				(size 3 3) (bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "f2819610-45a7-4f63-bea1-52890371c2ba")
+	)
+	(text "GPIO28 (LED_DIN) → R38 330 Ω → D11 grün (MEIHUA MHT193CGCT, 569 nm, Vf ≈ 2,2 V) → GND"
+		(exclude_from_sim no)
+		(at 20.32 30.48 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "3f32530e-1ed3-4823-bc53-dcbcb30ec351")
+	)
+	(text "High = LED an, I_F ≈ (3,3 V − 2,1 V) / 330 Ω ≈ 3,5 mA"
+		(exclude_from_sim no)
+		(at 20.32 35.56 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+			)
+			(justify left bottom)
+		)
+		(uuid "3efa25df-3aae-4e46-b86f-d41356beaa05")
+	)
+	(global_label "LED_DIN"
+		(shape passive)
+		(at 62.23 54.61 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2cdd8f1c-afc0-4957-874d-87e76202d246")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 62.23 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LED_DIN_R"
+		(shape passive)
+		(at 99.06 54.61 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "17973f70-d210-43d9-bb3e-40b76a963e3f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 99.06 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 99.06 73.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(uuid "ab30307b-f5c5-461f-be87-ec673cf1841a")
+		(property "Reference" "#PWR7001"
+			(at 99.06 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 99.06 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 99.06 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2df17508-261f-4c67-af92-2f3864796a4e")
+		)
+		(instances
+			(project "poe_usb_hid_bridge_rev4g"
+				(path "/ee8c511e-7f1f-5f05-b2b0-f14822b2bff7/364e9637-e1bb-5214-b7e0-18ff27760084"
+					(reference "#PWR7001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

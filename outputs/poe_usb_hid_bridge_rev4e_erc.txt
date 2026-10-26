@@ -1,0 +1,10 @@
+ERC-Protokoll Rev 4e (Stand nach K1/H1, 2026-10-23 11:54)
+
+SKiDL-ERC (circuits\poe_usb_hid_bridge, Netzliste outputs\poe_usb_hid_bridge_rev4e.net, 84 Teile, 42 Netze):
+ERC INFO: No errors or warnings found while running ERC.
+
+
+KiCad-ERC (kicad-cli sch erc --severity-all, kicad\poe_usb_hid_bridge_rev4e\poe_usb_hid_bridge_rev4e.kicad_sch):
+Verstoesse: 0
+
+Netzlisten-Vergleich KiCad-Schaltplan <-> SKiDL: 84 = 84 Bauteile, alle 42 Netze identisch (zusaetzlich nur KiCad-Einzelnetze 'unconnected-(...)' fuer NC-Pins).

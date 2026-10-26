@@ -1,0 +1,84 @@
+(version 1)
+# poe_usb_hid_bridge Rev 4e - custom design rules (20 x 80 mm board, 6 layers JLC06161H-3313, 25 mm tube, Ag9905LP module U1)
+# Isolation PRIMARY (net class POE_HV: PSE_CT12/36, PSE_SP45/78, VDD_POE, VSS) <-> SECONDARY (all other nets):
+# >= 3.0 mm on every copper layer. Later rules take precedence over earlier ones.
+
+(rule "ISO_PRI_SEC_3mm"
+  (constraint clearance (min 3.0mm))
+  (condition "(A.NetClass == 'POE_HV' && B.NetClass != 'POE_HV') || (B.NetClass == 'POE_HV' && A.NetClass != 'POE_HV')"))
+
+(rule "ISO_PRI_SEC_3mm_hole"
+  (constraint hole_clearance (min 3.0mm))
+  (condition "((A.NetClass == 'POE_HV' && B.NetClass != 'POE_HV') || (B.NetClass == 'POE_HV' && A.NetClass != 'POE_HV')) && B.Type != 'Pad'"))
+
+# Crossers: U1 Ag9905LP (module provides the isolation, VIN row <-> output row 11.38 mm pitch, 9.6 mm edge-edge)
+(rule "ISO_EXC_U1"
+  (constraint clearance (min 0.5mm))
+  (condition "((A.NetClass == 'POE_HV' && B.NetClass != 'POE_HV') || (B.NetClass == 'POE_HV' && A.NetClass != 'POE_HV')) && A.memberOfFootprint('U1') && B.memberOfFootprint('U1')"))
+# C14 (Y2 capacitor, DNP option) bridges the barrier by design
+(rule "ISO_EXC_C14"
+  (constraint clearance (min 0.5mm))
+  (condition "((A.NetClass == 'POE_HV' && B.NetClass != 'POE_HV') || (B.NetClass == 'POE_HV' && A.NetClass != 'POE_HV')) && A.memberOfFootprint('C14') && B.memberOfFootprint('C14')"))
+
+# J1 MagJack: documented deviation R-ISO-3 / design review M4 (pad 5<->7 1.24 mm, SH<->10 1.97 mm).
+# Inside the J1 courtyard (pads of J1 and the copper that connects to them) 1.0 mm minimum. Zones never use it.
+(rule "ISO_EXC_J1"
+  (constraint clearance (min 1.0mm))
+  (condition "((A.NetClass == 'POE_HV' && B.NetClass != 'POE_HV') || (B.NetClass == 'POE_HV' && A.NetClass != 'POE_HV')) && (A.memberOfFootprint('J1') || B.memberOfFootprint('J1')) && A.intersectsCourtyard('J1') && B.intersectsCourtyard('J1') && A.Type != 'Zone' && B.Type != 'Zone'"))
+(rule "ISO_EXC_J1_hole"
+  (constraint hole_clearance (min 1.0mm))
+  (condition "((A.NetClass == 'POE_HV' && B.NetClass != 'POE_HV') || (B.NetClass == 'POE_HV' && A.NetClass != 'POE_HV')) && (A.memberOfFootprint('J1') || B.memberOfFootprint('J1')) && A.intersectsCourtyard('J1') && B.intersectsCourtyard('J1') && A.Type != 'Zone' && B.Type != 'Zone'"))
+
+# JLC: plated component holes min annular ring 0.13 mm (vias 0.45/0.3 allowed with 0.075 mm)
+(rule "PTH_annular"
+  (constraint annular_width (min 0.13mm))
+  (condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole'"))
+
+# Differential pairs (start values, verify with JLC impedance calculator for JLC04161H-3313)
+(rule "ETH_100R_diff"
+  (constraint track_width (min 0.127mm) (opt 0.13mm))
+  (condition "A.NetClass == 'ETH'"))
+(rule "ETH_TX_skew"
+  (constraint skew (max 0.1mm))
+  (condition "A.inDiffPair('ETH_TX')"))
+(rule "ETH_RX_skew"
+  (constraint skew (max 0.1mm))
+  (condition "A.inDiffPair('ETH_RX')"))
+(rule "ETH_100R_coupled"
+  (constraint diff_pair_gap (min 0.18mm) (opt 0.2mm) (max 0.22mm))
+  (condition "A.NetClass == 'ETH' && A.enclosedByArea('ETH_COUPLED')"))
+(rule "USB_90R_diff"
+  (constraint track_width (min 0.14mm) (opt 0.15mm))
+  (constraint length (max 30mm))
+  (condition "A.NetClass == 'USB'"))
+(rule "USB_90R_coupled"
+  (constraint diff_pair_gap (min 0.16mm) (opt 0.18mm) (max 0.2mm))
+  (condition "A.NetClass == 'USB' && A.enclosedByArea('USB_COUPLED')"))
+
+# W55RP20 QFN-68 P0.4: secondary nets inside the U5 courtyard may use 0.15 mm
+(rule "U5_finepitch"
+  (constraint clearance (min 0.15mm))
+  (condition "A.NetClass != 'POE_HV' && B.NetClass != 'POE_HV' && A.intersectsCourtyard('U5') && B.intersectsCourtyard('U5')"))
+
+# (Rev 4 / step 5, user decision 2026-10-22) Small vias 0.4/0.2 mm (JLC: 0.2 mm drill, 0.1 mm annular ring, surcharge accepted)
+# only inside the small rule area U5_FANOUT around U5 (W55RP20 QFN-68, 0.4 mm pitch); everywhere else vias stay >= 0.45/0.3 mm.
+(rule "VIA_STD"
+  (constraint via_diameter (min 0.45mm))
+  (constraint hole_size (min 0.3mm))
+  (condition "A.Type == 'Via' && !A.intersectsArea('U5_FANOUT')"))
+(rule "VIA_U5_FANOUT"
+  (constraint via_diameter (min 0.4mm))
+  (constraint hole_size (min 0.2mm))
+  (condition "A.Type == 'Via' && A.intersectsArea('U5_FANOUT')"))
+# Fan-out lanes at 0.4 mm pitch next to an in-line 0.4 mm via leave 0.125 mm copper gap: inside U5_FANOUT
+# secondary copper may use 0.1 mm clearance / 0.2 mm hole clearance (JLC 4-layer capability 0.09 mm).
+(rule "U5_FANOUT_clearance"
+  (constraint clearance (min 0.1mm))
+  (constraint hole_clearance (min 0.2mm))
+  (condition "A.NetClass != 'POE_HV' && B.NetClass != 'POE_HV' && A.intersectsArea('U5_FANOUT') && B.intersectsArea('U5_FANOUT')"))
+
+# Rev 4e: J3 = SWD edge pad field (DNP, header only hand-soldered for debugging). Its courtyard models the
+# plugged 2.54 mm header/cable and deliberately overlaps the board area and edge -> courtyard checks waived for J3.
+(rule "J3_courtyard_waiver"
+  (constraint courtyard_clearance (min -20mm))
+  (condition "A.Reference == 'J3' || B.Reference == 'J3'"))

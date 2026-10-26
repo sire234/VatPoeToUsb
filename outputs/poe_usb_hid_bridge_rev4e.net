@@ -1,0 +1,3767 @@
+(export 
+  (version "D")
+  (design
+    (source "verify_skidl.py")
+    (date "10/23/2026 11:35 AM")
+    (tool "SKiDL (3.0.0)")
+    (sheet
+      (number 1)
+      (name "/ldo_3v3_1/")
+      (tstamps "/470f6a4f-cc1a-52d2-a76b-bd0b280a57d3/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "verify_skidl.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 2)
+      (name "/poe_pd_module1/")
+      (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "verify_skidl.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 3)
+      (name "/usb_host_port1/")
+      (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "verify_skidl.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 4)
+      (name "/")
+      (tstamps "/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "verify_skidl.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 5)
+      (name "/status_led1/")
+      (tstamps "/364e9637-e1bb-5214-b7e0-18ff27760084/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "verify_skidl.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 6)
+      (name "/ethernet_magjack1/")
+      (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "verify_skidl.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value ""))))
+    (sheet
+      (number 7)
+      (name "/mcu_w55rp20_1/")
+      (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "verify_skidl.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value "")))))
+  (components
+    (comp
+      (ref "C1")
+      (value "100nF 100V X7R")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (fields
+        (field
+          (name "MPN") "CL21B104KCFNNNE")
+        (field
+          (name "LCSC") "C28233")
+        (field
+          (name "DNP") "DNP")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "z_ayzlC3OC")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "a50900e6-8a64-55a9-b416-d6e81f323404"))
+    (comp
+      (ref "C10")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "CAiedTG9q4")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "e4ff2c2a-6619-5b08-b9e9-f57741e46add"))
+    (comp
+      (ref "C11")
+      (value "100uF 10V polymer 15mR")
+      (description "Polarized capacitor")
+      (footprint "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D")
+      (fields
+        (field
+          (name "MPN") "SA11AM101A19R15XXX")
+        (field
+          (name "LCSC") "C135491")
+        (field
+          (name "Description") "Polarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "huobIEo93E")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "C_Polarized"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "4d1f335c-362b-583c-bc00-10b7a493be94"))
+    (comp
+      (ref "C12")
+      (value "22uF 25V X5R")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (fields
+        (field
+          (name "MPN") "CL21A226MAQNNNE")
+        (field
+          (name "LCSC") "C45783")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "tYhoZelokb")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "d8e128b0-a79d-5688-8609-18226de6f97f"))
+    (comp
+      (ref "C13")
+      (value "22uF 25V")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0805_2012Metric")
+      (fields
+        (field
+          (name "MPN") "CL21A226MAQNNNE")
+        (field
+          (name "LCSC") "C45783")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "lI1io7v4MP")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "684b1571-d7d3-5759-a07e-71057350d341"))
+    (comp
+      (ref "C14")
+      (value "2.2nF 250VAC X1/Y2")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_1812_4532Metric")
+      (fields
+        (field
+          (name "MPN") "FK12X222K502EGQ")
+        (field
+          (name "LCSC") "C53026446")
+        (field
+          (name "DNP") "DNP")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_1812_4532Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "5LU_kGySLM")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "703eb2f7-babb-532b-9dc0-f436a7e437c5"))
+    (comp
+      (ref "C15")
+      (value "4.7uF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "CL10A475KO8NNNC")
+        (field
+          (name "LCSC") "C19666")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "KvAI0JQYw6")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ldo_3v3.py:39"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/ldo_3v3_1/")
+        (tstamps "/470f6a4f-cc1a-52d2-a76b-bd0b280a57d3/"))
+      (component_classes)
+      (tstamps "a5283456-dcd5-584b-86ce-75bbcab99eb5"))
+    (comp
+      (ref "C16")
+      (value "10uF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "CL10A106KP8NNNC")
+        (field
+          (name "LCSC") "C19702")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "6H82IPrBuU")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ldo_3v3.py:46"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/ldo_3v3_1/")
+        (tstamps "/470f6a4f-cc1a-52d2-a76b-bd0b280a57d3/"))
+      (component_classes)
+      (tstamps "019e7286-9a80-5b02-8714-2efd7df296be"))
+    (comp
+      (ref "C17")
+      (value "1uF 50V")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "CL10A105KB8NNNC")
+        (field
+          (name "LCSC") "C15849")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "lSTAe_1_TA")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:66"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "f814c243-b006-5b72-a7cc-742dd159c4b0"))
+    (comp
+      (ref "C18")
+      (value "150uF 6.3V")
+      (description "Polarized capacitor")
+      (footprint "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B")
+      (fields
+        (field
+          (name "MPN") "T520B157M006ATE035")
+        (field
+          (name "LCSC") "C212682")
+        (field
+          (name "Description") "Polarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "x00YM1uY3c")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:72"))
+      (libsource
+        (lib "Device")
+        (part "C_Polarized"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "aebb693a-b1bc-5bca-a00e-8e3557afe87b"))
+    (comp
+      (ref "C19")
+      (value "10uF 10V")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "CL10A106KP8NNNC")
+        (field
+          (name "LCSC") "C19702")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "K_Q4JcQ28T")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:78"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "fe9520e0-3eb8-523e-a25e-ed5551af5fa7"))
+    (comp
+      (ref "C20")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "KE4PxC_PQC")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:83"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "f17b6446-f624-5b94-8c01-d4203d945361"))
+    (comp
+      (ref "C21")
+      (value "10nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B103KB5NNNC")
+        (field
+          (name "LCSC") "C15195")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "6DSt6M1JtB")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:102"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "4b446ee8-d71b-5791-ba46-ae76d0883f3e"))
+    (comp
+      (ref "C23")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "u7AiRLRHbj")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:109"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "1b23c034-bd00-5108-9af0-e5b053056956"))
+    (comp
+      (ref "C24")
+      (value "4.7nF 2kV")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_1812_4532Metric")
+      (fields
+        (field
+          (name "MPN") "C1812X472K202T")
+        (field
+          (name "LCSC") "C106172")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_1812_4532Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "bxKORfpXFL")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:124"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "e25ac4e3-aed0-56a7-b6ed-0c63b85b1cf4"))
+    (comp
+      (ref "C25")
+      (value "15pF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402CG150J500NT")
+        (field
+          (name "LCSC") "C1548")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "QDyTovVu4v")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "6804aa3e-45bc-5ceb-b5d4-15250843adbf"))
+    (comp
+      (ref "C26")
+      (value "15pF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402CG150J500NT")
+        (field
+          (name "LCSC") "C1548")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "4E730BmT6v")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "0649565b-3d9e-5701-a264-46cabd02f57a"))
+    (comp
+      (ref "C27")
+      (value "27pF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402CG270J500NT")
+        (field
+          (name "LCSC") "C1557")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "eaxtGcKVbF")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "56d2531b-5329-5969-accf-5d95ab79c5b9"))
+    (comp
+      (ref "C28")
+      (value "27pF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402CG270J500NT")
+        (field
+          (name "LCSC") "C1557")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "ARWIThxnHi")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "e85a4abd-359d-583c-8b60-82f4e14a9cc6"))
+    (comp
+      (ref "C29")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "RuPLTpahFZ")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:132"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "8068d02d-8436-5e82-a7f4-a9eeb9931d0a"))
+    (comp
+      (ref "C30")
+      (value "4.7nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "CL10B472KB8NNNC")
+        (field
+          (name "LCSC") "C1621")
+        (field
+          (name "DNP") "DNP")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "x4jBqx4huQ")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:153"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "31c663a1-dc1f-5e46-a458-2d516425c2ae"))
+    (comp
+      (ref "C40")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "2k37kBnXX3")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "3600991e-439e-59fc-8237-8253cc662e6f"))
+    (comp
+      (ref "C41")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "tyB5imczep")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "339634f4-4a2d-596a-8da2-1ed5aedf15c6"))
+    (comp
+      (ref "C42")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "j_W44mXCth")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "4404eb5a-0c98-55ca-92a3-80dcdb8cd3d7"))
+    (comp
+      (ref "C43")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "IQHZKzsgZe")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "fbc92b4f-5ba6-582e-a44a-14cc6ee5ebee"))
+    (comp
+      (ref "C44")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "YSSj1HJHYo")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "3523451a-da81-5012-847d-71d884df3822"))
+    (comp
+      (ref "C45")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "4N1zflSBpM")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "6b69aa45-b2c8-562a-826e-a94ad33558c6"))
+    (comp
+      (ref "C46")
+      (value "10uF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "CL10A106KP8NNNC")
+        (field
+          (name "LCSC") "C19702")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "IDTJ84HVEb")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "e0a7ae0b-c443-587d-a149-4e852c6cbaa4"))
+    (comp
+      (ref "C47")
+      (value "1uF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05A105KA5NQNC")
+        (field
+          (name "LCSC") "C52923")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "3BxKRxd7Q_")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "20507424-02b4-5159-a2bf-0c688b01ee09"))
+    (comp
+      (ref "C48")
+      (value "1uF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05A105KA5NQNC")
+        (field
+          (name "LCSC") "C52923")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "Mb29j84paU")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "670aa8c0-1738-5f26-aaea-58b26688d871"))
+    (comp
+      (ref "C49")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "ui0Tz4ewQ0")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "9b54da11-5751-58f0-a3fb-66d2e4140032"))
+    (comp
+      (ref "C50")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "0BOTcG12H4")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "b4efba7e-9dc4-5cb7-be0c-4880c705ea93"))
+    (comp
+      (ref "C51")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "oquiQq1lgV")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "9b26c59f-9c89-5667-902a-a3f470db3c9e"))
+    (comp
+      (ref "C52")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "c_0jdeSTU0")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "badf2d36-1d68-5970-88d8-c257eb7d7861"))
+    (comp
+      (ref "C53")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "UohBF0JOIZ")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "c8b59548-2578-523e-8203-4533201f304d"))
+    (comp
+      (ref "C54")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "EXoBvp8cl6")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "52617336-d914-5535-8593-41ebe123d8ce"))
+    (comp
+      (ref "C55")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "hurG8GPRpf")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "75a81552-58a1-51dd-a186-dc4ff4ee05f7"))
+    (comp
+      (ref "C56")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "7OEn_nCy8N")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "7b7ca604-8303-54e0-8e95-ef55bfaafa96"))
+    (comp
+      (ref "C57")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "DcKW0CTbi4")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "287cb907-07d5-570f-8ed9-23167700ac8f"))
+    (comp
+      (ref "C58")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "OtqtvuvCj9")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "381a3e4f-41a4-5b71-8541-b362987b6554"))
+    (comp
+      (ref "C59")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "oZsxsF_hLD")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "d570aa61-212e-5774-afa1-fb8308bbfcd3"))
+    (comp
+      (ref "C60")
+      (value "10uF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "CL10A106KP8NNNC")
+        (field
+          (name "LCSC") "C19702")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "CmFPunGGSc")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "40f6d961-5d20-5ea1-92e5-4208130d4ac9"))
+    (comp
+      (ref "C61")
+      (value "4.7uF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "CL10A475KO8NNNC")
+        (field
+          (name "LCSC") "C19666")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "hzEsUOG5Xv")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "fd08bf17-b218-57a9-add1-909cf41eb65b"))
+    (comp
+      (ref "C62")
+      (value "10nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B103KB5NNNC")
+        (field
+          (name "LCSC") "C15195")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "60Lks7jwdk")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:61"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "9faac1ee-be4f-5679-819c-6cf688a35ff9"))
+    (comp
+      (ref "C64")
+      (value "100nF")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "CL05B104KO5NNNC")
+        (field
+          (name "LCSC") "C1525")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "wywLs1ZWB1")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\status_led.py:51"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/status_led1/")
+        (tstamps "/364e9637-e1bb-5214-b7e0-18ff27760084/"))
+      (component_classes)
+      (tstamps "b230a459-c773-5cd0-a462-825ab93e3b1e"))
+    (comp
+      (ref "C65")
+      (value "6.8nF 50V X7R")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "YAGEO CC0402KRX7R9BB682")
+        (field
+          (name "LCSC") "C93654")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "6ucmDV5LhO")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:96"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "5e2d08b0-fdc9-5c71-94d1-a91538a437b1"))
+    (comp
+      (ref "C66")
+      (value "6.8nF 50V X7R")
+      (description "Unpolarized capacitor")
+      (footprint "Capacitor_SMD:C_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "YAGEO CC0402KRX7R9BB682")
+        (field
+          (name "LCSC") "C93654")
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "YN9rdBvDYD")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:96"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "e69120f5-ea63-522d-a1c6-a165860d74bb"))
+    (comp
+      (ref "D1")
+      (value "MB6S")
+      (description "MDD MB6S bridge rectifier MBS/TO-269AA. MDD datasheet pinout: 1=+ 2=- 3=~ 4=~ (KiCad Diode_Bridge:MB6S has 3=+ 4=-, do not use)")
+      (footprint "Package_TO_SOT_SMD:TO-269AA")
+      (fields
+        (field
+          (name "MPN") "MDD MB6S-50MIL")
+        (field
+          (name "LCSC") "C2487")
+        (field
+          (name "Description") "MDD MB6S bridge rectifier MBS/TO-269AA. MDD datasheet pinout: 1=+ 2=- 3=~ 4=~ (KiCad Diode_Bridge:MB6S has 3=+ 4=-, do not use)")
+        (field
+          (name "Footprint") "Package_TO_SOT_SMD:TO-269AA")
+        (field
+          (name "Datasheet") "https://www.microdiode.com/")
+        (field
+          (name "SKiDL Tag") "Y1RELK4b08")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "C:\Users\simon\Documents\Projects\Test\PoeToUSB\libs\poe_usb_hid_bridge.kicad_sym")
+        (part "MB6S_MDD"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "a057f945-e60f-58b6-af69-c452f4137ede"))
+    (comp
+      (ref "D11")
+      (value "WS2812B-2020-V6")
+      (description "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA")
+      (footprint "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm")
+      (fields
+        (field
+          (name "MPN") "Worldsemi WS2812B-2020-V6")
+        (field
+          (name "LCSC") "C52917434")
+        (field
+          (name "Description") "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA")
+        (field
+          (name "Footprint") "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm")
+        (field
+          (name "Datasheet") "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf")
+        (field
+          (name "SKiDL Tag") "bDNtFQ4dUi")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\status_led.py:36"))
+      (libsource
+        (lib "LED")
+        (part "WS2812B-2020"))
+      (sheetpath
+        (names "/status_led1/")
+        (tstamps "/364e9637-e1bb-5214-b7e0-18ff27760084/"))
+      (component_classes)
+      (tstamps "2105fdd5-a3bb-5419-a903-054b29ec3418"))
+    (comp
+      (ref "D12")
+      (value "BZT52C6V2")
+      (description "Zener diode")
+      (footprint "Diode_SMD:D_SOD-123")
+      (fields
+        (field
+          (name "MPN") "BZT52C6V2")
+        (field
+          (name "LCSC") "C271260")
+        (field
+          (name "Description") "Zener diode")
+        (field
+          (name "Footprint") "Diode_SMD:D_SOD-123")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "Ihk582pnnP")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "D_Zener"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "10951824-556f-55b2-9ee3-b1b9a8d595b5"))
+    (comp
+      (ref "D2")
+      (value "MB6S")
+      (description "MDD MB6S bridge rectifier MBS/TO-269AA. MDD datasheet pinout: 1=+ 2=- 3=~ 4=~ (KiCad Diode_Bridge:MB6S has 3=+ 4=-, do not use)")
+      (footprint "Package_TO_SOT_SMD:TO-269AA")
+      (fields
+        (field
+          (name "MPN") "MDD MB6S-50MIL")
+        (field
+          (name "LCSC") "C2487")
+        (field
+          (name "Description") "MDD MB6S bridge rectifier MBS/TO-269AA. MDD datasheet pinout: 1=+ 2=- 3=~ 4=~ (KiCad Diode_Bridge:MB6S has 3=+ 4=-, do not use)")
+        (field
+          (name "Footprint") "Package_TO_SOT_SMD:TO-269AA")
+        (field
+          (name "Datasheet") "https://www.microdiode.com/")
+        (field
+          (name "SKiDL Tag") "58MInGleva")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "C:\Users\simon\Documents\Projects\Test\PoeToUSB\libs\poe_usb_hid_bridge.kicad_sym")
+        (part "MB6S_MDD"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "a84616c9-6571-5ab1-b25e-deb9e3b63886"))
+    (comp
+      (ref "D3")
+      (value "SMAJ58A")
+      (description "Zener diode")
+      (footprint "Diode_SMD:D_SMA")
+      (fields
+        (field
+          (name "MPN") "MDD SMAJ58A")
+        (field
+          (name "LCSC") "C123816")
+        (field
+          (name "Description") "Zener diode")
+        (field
+          (name "Footprint") "Diode_SMD:D_SMA")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "3OQvppzkzD")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "D_Zener"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "79c2e119-34b5-5aee-bb9a-73c65a91a182"))
+    (comp
+      (ref "FB1")
+      (value "600R 3A")
+      (description "Ferrite bead")
+      (footprint "Inductor_SMD:L_1206_3216Metric")
+      (fields
+        (field
+          (name "MPN") "HCB3216KF-601T30")
+        (field
+          (name "LCSC") "C357023")
+        (field
+          (name "Description") "Ferrite bead")
+        (field
+          (name "Footprint") "Inductor_SMD:L_1206_3216Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "EQYIiWBBHT")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "FerriteBead"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "cb92d19e-2292-53c2-8a8e-4e26cf44312f"))
+    (comp
+      (ref "FB2")
+      (value "120R@100MHz")
+      (description "Ferrite bead")
+      (footprint "Inductor_SMD:L_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "BLM18PG121SN1D")
+        (field
+          (name "LCSC") "C14709")
+        (field
+          (name "Description") "Ferrite bead")
+        (field
+          (name "Footprint") "Inductor_SMD:L_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "b7C_YRzzCs")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:138"))
+      (libsource
+        (lib "Device")
+        (part "FerriteBead"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "77af704c-65c1-51d6-80a4-f9899441368d"))
+    (comp
+      (ref "J1")
+      (value "HR871150C")
+      (description "HanRun HR871150C RJ45 MagJack 10/100 PoE (4 center taps), 2 LEDs, THT. No pin 6. CT(P3) = ONE common chip-side center tap of both transformers. Shield pad 'SH' (2 tabs).")
+      (footprint "poe_usb_hid_bridge:HanRun_HR871150C")
+      (fields
+        (field
+          (name "MPN") "HanRun HR871150C")
+        (field
+          (name "LCSC") "C19724786")
+        (field
+          (name "Description") "HanRun HR871150C RJ45 MagJack 10/100 PoE (4 center taps), 2 LEDs, THT. No pin 6. CT(P3) = ONE common chip-side center tap of both transformers. Shield pad 'SH' (2 tabs).")
+        (field
+          (name "Footprint") "poe_usb_hid_bridge:HanRun_HR871150C")
+        (field
+          (name "Datasheet") "https://datasheet.lcsc.com/datasheet/pdf/bae28869af3176e6a10bdf4859b444a5.pdf")
+        (field
+          (name "SKiDL Tag") "TNMaEwrZap")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:45"))
+      (libsource
+        (lib "C:\Users\simon\Documents\Projects\Test\PoeToUSB\libs\poe_usb_hid_bridge.kicad_sym")
+        (part "HR871150C"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "4385ff61-f08a-56f2-994e-50770fb93ee8"))
+    (comp
+      (ref "J2")
+      (value "BX-TYPE-A-MWT4P")
+      (description "USB Type A connector")
+      (footprint "poe_usb_hid_bridge:BX-TYPE-A-MWT4P")
+      (fields
+        (field
+          (name "MPN") "BX-TYPE-A-MWT4P")
+        (field
+          (name "LCSC") "C18077687")
+        (field
+          (name "Description") "USB Type A connector")
+        (field
+          (name "Footprint") "poe_usb_hid_bridge:BX-TYPE-A-MWT4P")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "xHfPCHCbi4")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:138"))
+      (libsource
+        (lib "Connector")
+        (part "USB_A"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "18872e9a-49ec-5c7f-b876-aed166767b8e"))
+    (comp
+      (ref "J3")
+      (value "SWD")
+      (description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+      (footprint "poe_usb_hid_bridge:SWD_Edge_1x04_P2.54mm_SMD")
+      (fields
+        (field
+          (name "MPN"))
+        (field
+          (name "LCSC"))
+        (field
+          (name "DNP") "DNP")
+        (field
+          (name "Note") "edge pad field for a 2.54 mm pin header, hand-soldered")
+        (field
+          (name "Description") "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+        (field
+          (name "Footprint") "poe_usb_hid_bridge:SWD_Edge_1x04_P2.54mm_SMD")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "Cn9_y5JFLr")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:206"))
+      (libsource
+        (lib "Connector_Generic")
+        (part "Conn_01x04"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "890b6a9d-8550-57e4-b71b-8259eccae012"))
+    (comp
+      (ref "R1")
+      (value "49.9R")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF499JTCE")
+        (field
+          (name "LCSC") "C25120")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "a6zTX6q5Y4")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:73"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "170b6ac2-3c2e-5362-87a2-7bd622d05d08"))
+    (comp
+      (ref "R2")
+      (value "49.9R")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF499JTCE")
+        (field
+          (name "LCSC") "C25120")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "Nfj_3y8wwl")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:74"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "94b15b10-4f7b-5ba3-a720-7d39591e87f9"))
+    (comp
+      (ref "R22")
+      (value "12.4k")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF1242TCE")
+        (field
+          (name "LCSC") "C11692")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "AjewTtJixC")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:69"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "134ca642-b0ba-5e81-8096-baa4c7b90426"))
+    (comp
+      (ref "R25")
+      (value "44.2k")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF4422TCE")
+        (field
+          (name "LCSC") "C25895")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "GR02ZxtTtQ")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:55"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "92d4b412-90e1-5d86-863b-b380a89fc4ce"))
+    (comp
+      (ref "R26")
+      (value "100k")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF1003TCE")
+        (field
+          (name "LCSC") "C25741")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "w1yUEfGbpq")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:60"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "a769edcb-89a3-5b79-a550-8290e3532a65"))
+    (comp
+      (ref "R28")
+      (value "27")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF270JTCE")
+        (field
+          (name "LCSC") "C25100")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "lqHfnr2g97")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:100"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "38b589e0-71e2-5e2b-9775-d3a890742b19"))
+    (comp
+      (ref "R29")
+      (value "27")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF270JTCE")
+        (field
+          (name "LCSC") "C25100")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "OkPvl5Cz8U")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:105"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "99641e9e-17c2-515d-8098-38e8bd94ddd4"))
+    (comp
+      (ref "R3")
+      (value "49.9R")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF499JTCE")
+        (field
+          (name "LCSC") "C25120")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "CYbq9qg_65")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:84"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "959dcf26-cd9d-545c-b0f7-235498176555"))
+    (comp
+      (ref "R30")
+      (value "15k")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF1502TCE")
+        (field
+          (name "LCSC") "C25756")
+        (field
+          (name "DNP") "DNP")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "hsWsotJNFn")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:111"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "9877c689-5a69-55e2-a794-c030e10ce158"))
+    (comp
+      (ref "R31")
+      (value "15k")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF1502TCE")
+        (field
+          (name "LCSC") "C25756")
+        (field
+          (name "DNP") "DNP")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "H1GtrXX76_")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:116"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "d6ad0b91-adda-5952-bcde-b1179161a3cb"))
+    (comp
+      (ref "R32")
+      (value "100k")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF1003TCE")
+        (field
+          (name "LCSC") "C25741")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "k79XyNEyZ0")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:122"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "69d32838-2c3f-5398-b0f7-edc082d10d0d"))
+    (comp
+      (ref "R33")
+      (value "68k")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF6802TCE")
+        (field
+          (name "LCSC") "C36871")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "0LjvQ6qKSE")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:127"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "25692c23-eb9e-59b5-8aaa-781cd268b09c"))
+    (comp
+      (ref "R34")
+      (value "0R")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "0603WAF0000T5E")
+        (field
+          (name "LCSC") "C21189")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "St9cconLCB")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:148"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "e9c5d88e-cf39-508f-91f9-e0d3a6e68829"))
+    (comp
+      (ref "R37")
+      (value "1k")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF1001TCE")
+        (field
+          (name "LCSC") "C11702")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "mR_sBvbhBC")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:69"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "797575de-1e3e-52d3-b22c-74626e1f0636"))
+    (comp
+      (ref "R38")
+      (value "330R")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF3300TCE")
+        (field
+          (name "LCSC") "C25104")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "60jrKKkcMy")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\status_led.py:45"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/status_led1/")
+        (tstamps "/364e9637-e1bb-5214-b7e0-18ff27760084/"))
+      (component_classes)
+      (tstamps "e33ab764-9ce3-5e6f-b9a9-ede96ea4bd9a"))
+    (comp
+      (ref "R4")
+      (value "49.9R")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0402_1005Metric")
+      (fields
+        (field
+          (name "MPN") "0402WGF499JTCE")
+        (field
+          (name "LCSC") "C25120")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0402_1005Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "0_0URPZilN")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:85"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "7474727d-e46d-5f3a-966c-26ebe9f75279"))
+    (comp
+      (ref "R7")
+      (value "1M")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN") "0603WAF1004T5E")
+        (field
+          (name "LCSC") "C22935")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "vY8uniPCEs")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ethernet_magjack.py:118"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/ethernet_magjack1/")
+        (tstamps "/c6b30813-9c97-5654-98f3-c50d8b4e9fb1/"))
+      (component_classes)
+      (tstamps "fd2489d9-bc18-5315-95f6-55b2a9713051"))
+    (comp
+      (ref "R8")
+      (value "100R 1206")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_1206_3216Metric")
+      (fields
+        (field
+          (name "MPN") "1206W4F1000T5E")
+        (field
+          (name "LCSC") "C17901")
+        (field
+          (name "DNP") "DNP")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_1206_3216Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "rgzM6JAKUP")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "adcf7fa7-fd2a-5e21-bd75-3df4ffd42979"))
+    (comp
+      (ref "R9")
+      (value "DNP (ADJ trim)")
+      (description "Resistor")
+      (footprint "Resistor_SMD:R_0603_1608Metric")
+      (fields
+        (field
+          (name "MPN"))
+        (field
+          (name "LCSC"))
+        (field
+          (name "DNP") "DNP")
+        (field
+          (name "Description") "Resistor")
+        (field
+          (name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "8Rv5pa6oII")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "Device")
+        (part "R"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "9fe8813b-459e-5517-b896-5049185bb7f8"))
+    (comp
+      (ref "TP9")
+      (value "TP_+5V")
+      (description "test point")
+      (footprint "TestPoint:TestPoint_Pad_D1.0mm")
+      (fields
+        (field
+          (name "MPN"))
+        (field
+          (name "LCSC"))
+        (field
+          (name "Description") "test point")
+        (field
+          (name "Footprint") "TestPoint:TestPoint_Pad_D1.0mm")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "GTFE3OwigH")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:129"))
+      (libsource
+        (lib "Connector")
+        (part "TestPoint"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "234669c8-1d4a-5afe-9140-ecba9718fe33"))
+    (comp
+      (ref "U1")
+      (value "Ag9905-LPB")
+      (description "Silvertel Ag9905-LPB IEEE802.3af PoE PD module, Class 0, 5.0 V (4.75-5.25) / 1.4 A, 7 W @70C / 4.5 W @85C (industrial), 1500 V isolated, low-profile SMT 21.21x13.92x8.0 mm (max 9.2). Pins (DS V3.5 Table 2): 1 +VDC, 2 -VDC, 3 ADJ (open = 5.0 V), 4 VIN+, 5 VIN-. Min load 200 mA, C_out >= 100 uF low-ESR.")
+      (footprint "poe_usb_hid_bridge:Silvertel_Ag9900LPB_SMD")
+      (fields
+        (field
+          (name "MPN") "Ag9905-LPB")
+        (field
+          (name "LCSC"))
+        (field
+          (name "DNP") "DNP")
+        (field
+          (name "Consigned") "Silvertel Ag9905-LPB via distributor; JLC consigned SMT placement or hand reflow")
+        (field
+          (name "Height") "8.0 mm (max 9.2)")
+        (field
+          (name "Description") "Silvertel Ag9905-LPB IEEE802.3af PoE PD module, Class 0, 5.0 V (4.75-5.25) / 1.4 A, 7 W @70C / 4.5 W @85C (industrial), 1500 V isolated, low-profile SMT 21.21x13.92x8.0 mm (max 9.2). Pins (DS V3.5 Table 2): 1 +VDC, 2 -VDC, 3 ADJ (open = 5.0 V), 4 VIN+, 5 VIN-. Min load 200 mA, C_out >= 100 uF low-ESR.")
+        (field
+          (name "Footprint") "poe_usb_hid_bridge:Silvertel_Ag9900LPB_SMD")
+        (field
+          (name "Datasheet") "https://silvertel.com/images/datasheets/Ag9900M-datasheet-ultra-miniature-isolated-Power-over-Ethernet-POE-module.pdf")
+        (field
+          (name "SKiDL Tag") "IkRZtYRCFy")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\poe_pd_module.py:26"))
+      (libsource
+        (lib "C:\Users\simon\Documents\Projects\Test\PoeToUSB\libs\poe_usb_hid_bridge.kicad_sym")
+        (part "Ag9905-LPB"))
+      (sheetpath
+        (names "/poe_pd_module1/")
+        (tstamps "/52d3762f-99e4-56eb-8ed5-c139b9e56d2d/"))
+      (component_classes)
+      (tstamps "ff86e04c-0f30-57c0-9fab-223e6466dca4"))
+    (comp
+      (ref "U4")
+      (value "TLV75733PDRVR")
+      (description "1A Low IQ Small Size Low Dropout Voltage Regulator, Fixed Output 3.3V, WSON6")
+      (footprint "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm")
+      (fields
+        (field
+          (name "MPN") "TLV75733PDRVR")
+        (field
+          (name "LCSC") "C2868428")
+        (field
+          (name "Description") "1A Low IQ Small Size Low Dropout Voltage Regulator, Fixed Output 3.3V, WSON6")
+        (field
+          (name "Footprint") "Package_SON:WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm")
+        (field
+          (name "Datasheet") "https://www.ti.com/lit/ds/symlink/tlv757p.pdf")
+        (field
+          (name "SKiDL Tag") "AfbMygZf_f")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\ldo_3v3.py:25"))
+      (libsource
+        (lib "Regulator_Linear")
+        (part "TLV75733PDRV"))
+      (sheetpath
+        (names "/ldo_3v3_1/")
+        (tstamps "/470f6a4f-cc1a-52d2-a76b-bd0b280a57d3/"))
+      (component_classes)
+      (tstamps "707ba19e-f567-55db-aa7c-23843e5f49ad"))
+    (comp
+      (ref "U5")
+      (value "W55RP20")
+      (description "WIZnet W55RP20 SiP (RP2040 + W5500 + 2MB flash), QFN-68 8x8 P0.4 + EP (pin 69 = GND). Pin map verified vs W55RP20 DS V1.0.0. Pin 62 (flash VDD) is named VDD_FLASH.")
+      (footprint "poe_usb_hid_bridge:W55RP20_QFN-68-1EP_8x8mm_P0.4mm_EP6.2x6.2mm")
+      (fields
+        (field
+          (name "MPN") "W55RP20")
+        (field
+          (name "LCSC") "C43229502")
+        (field
+          (name "Description") "WIZnet W55RP20 SiP (RP2040 + W5500 + 2MB flash), QFN-68 8x8 P0.4 + EP (pin 69 = GND). Pin map verified vs W55RP20 DS V1.0.0. Pin 62 (flash VDD) is named VDD_FLASH.")
+        (field
+          (name "Footprint") "poe_usb_hid_bridge:W55RP20_QFN-68-1EP_8x8mm_P0.4mm_EP6.2x6.2mm")
+        (field
+          (name "Datasheet") "https://docs.wiznet.io/Product/Chip/MCU/W55RP20")
+        (field
+          (name "SKiDL Tag") "5KZCGU_lv4")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:80"))
+      (libsource
+        (lib "C:\Users\simon\Documents\Projects\Test\PoeToUSB\libs\poe_usb_hid_bridge.kicad_sym")
+        (part "W55RP20"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "9971c4d9-1c67-593d-9da3-f28e566b8ef7"))
+    (comp
+      (ref "U6")
+      (value "TPS2553DBVR")
+      (description "TI precision adjustable current-limit power switch 1.5 A, EN active high, SOT-23-6 (DBV). 1=IN 2=GND 3=EN 4=FAULT(OD) 5=ILIM 6=OUT")
+      (footprint "Package_TO_SOT_SMD:SOT-23-6")
+      (fields
+        (field
+          (name "MPN") "TPS2553DBVR")
+        (field
+          (name "LCSC") "C55266")
+        (field
+          (name "Description") "TI precision adjustable current-limit power switch 1.5 A, EN active high, SOT-23-6 (DBV). 1=IN 2=GND 3=EN 4=FAULT(OD) 5=ILIM 6=OUT")
+        (field
+          (name "Footprint") "Package_TO_SOT_SMD:SOT-23-6")
+        (field
+          (name "Datasheet") "https://www.ti.com/lit/ds/symlink/tps2553.pdf")
+        (field
+          (name "SKiDL Tag") "Zao0Zl6134")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:45"))
+      (libsource
+        (lib "C:\Users\simon\Documents\Projects\Test\PoeToUSB\libs\poe_usb_hid_bridge.kicad_sym")
+        (part "TPS2553"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "63727599-cdb6-5b92-90d9-2c56fc606928"))
+    (comp
+      (ref "U7")
+      (value "USBLC6-2SC6")
+      (description "Very low capacitance ESD protection diode, 2 data-line, SOT-23-6")
+      (footprint "Package_TO_SOT_SMD:SOT-23-6")
+      (fields
+        (field
+          (name "MPN") "USBLC6-2SC6")
+        (field
+          (name "LCSC") "C7519")
+        (field
+          (name "Description") "Very low capacitance ESD protection diode, 2 data-line, SOT-23-6")
+        (field
+          (name "Footprint") "Package_TO_SOT_SMD:SOT-23-6")
+        (field
+          (name "Datasheet") "https://www.st.com/resource/en/datasheet/usblc6-2.pdf")
+        (field
+          (name "SKiDL Tag") "4JiBhYL8vb")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\usb_host_port.py:89"))
+      (libsource
+        (lib "Power_Protection")
+        (part "USBLC6-2SC6"))
+      (sheetpath
+        (names "/usb_host_port1/")
+        (tstamps "/f3cbe4bf-a763-5f55-9b69-04c81eaf462e/"))
+      (component_classes)
+      (tstamps "8fe498e9-e826-5000-a6d1-dda07e8469b5"))
+    (comp
+      (ref "Y1")
+      (value "12MHz 10pF")
+      (description "Four pin crystal, GND on pins 2 and 4")
+      (footprint "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm")
+      (fields
+        (field
+          (name "MPN") "Abracon ABM8-272-T3")
+        (field
+          (name "LCSC") "C20625731")
+        (field
+          (name "Description") "Four pin crystal, GND on pins 2 and 4")
+        (field
+          (name "Footprint") "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "ARmXvU09Po")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:175"))
+      (libsource
+        (lib "Device")
+        (part "Crystal_GND24"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "3da1db69-a27f-5e47-852b-c1a9e7b4f254"))
+    (comp
+      (ref "Y2")
+      (value "25MHz 18pF")
+      (description "Four pin crystal, GND on pins 2 and 4")
+      (footprint "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm")
+      (fields
+        (field
+          (name "MPN") "X322525MRB4SI")
+        (field
+          (name "LCSC") "C70593")
+        (field
+          (name "Description") "Four pin crystal, GND on pins 2 and 4")
+        (field
+          (name "Footprint") "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "noxxgL1x7T")
+        (field
+          (name "SKiDL Line") "..\..\..\..\..\..\..\..\Documents\Projects\Test\PoeToUSB\circuits\poe_usb_hid_bridge\mcu_w55rp20.py:189"))
+      (libsource
+        (lib "Device")
+        (part "Crystal_GND24"))
+      (sheetpath
+        (names "/mcu_w55rp20_1/")
+        (tstamps "/23c225e6-71c2-5521-bc3a-accffd878771/"))
+      (component_classes)
+      (tstamps "3dfd30c0-4371-5984-9605-5f7fdaffcfff")))
+  (nets
+    (net
+      (code 1)
+      (name "+1V1")
+      (class "Default")
+      (node
+        (ref "C48")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C49")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C50")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "26")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "56")
+        (pintype "POWER-OUT"))
+      (node
+        (ref "U5")
+        (pin "61")
+        (pintype "POWER-IN")))
+    (net
+      (code 2)
+      (name "+3V3")
+      (class "Default")
+      (node
+        (ref "C16")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C40")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C41")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C42")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C43")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C44")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C45")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C46")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C47")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C51")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C52")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C53")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C54")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C64")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D11")
+        (pin "4")
+        (pintype "POWER-IN"))
+      (node
+        (ref "FB2")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J3")
+        (pin "4")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U4")
+        (pin "1")
+        (pintype "POWER-OUT"))
+      (node
+        (ref "U5")
+        (pin "13")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "25")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "42")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "43")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "53")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "54")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "55")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "59")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "60")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "62")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "64")
+        (pintype "POWER-IN")))
+    (net
+      (code 3)
+      (name "+3V3A")
+      (class "Default")
+      (node
+        (ref "C23")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C55")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C56")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C57")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C58")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C59")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C60")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "FB2")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R2")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "3")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "31")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "34")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "6")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U5")
+        (pin "8")
+        (pintype "POWER-IN")))
+    (net
+      (code 4)
+      (name "+5V")
+      (class "Default")
+      (node
+        (ref "C13")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C15")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C17")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D12")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "FB1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "TP9")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U4")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "U4")
+        (pin "6")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U6")
+        (pin "1")
+        (pintype "POWER-IN")))
+    (net
+      (code 5)
+      (name "+5V_RAW")
+      (class "Default")
+      (node
+        (ref "C10")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C11")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C12")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "FB1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R8")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "1")
+        (pintype "POWER-OUT")))
+    (net
+      (code 6)
+      (name "AG_ADJ")
+      (class "Default")
+      (node
+        (ref "R9")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "3")
+        (pintype "PASSIVE")))
+    (net
+      (code 7)
+      (name "ETH_EXRES")
+      (class "Default")
+      (node
+        (ref "R22")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "7")
+        (pintype "PASSIVE")))
+    (net
+      (code 8)
+      (name "ETH_RXN")
+      (class "Default")
+      (node
+        (ref "C66")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R4")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "4")
+        (pintype "INPUT")))
+    (net
+      (code 9)
+      (name "ETH_RXN_J")
+      (class "Default")
+      (node
+        (ref "C66")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "5")
+        (pintype "PASSIVE")))
+    (net
+      (code 10)
+      (name "ETH_RXP")
+      (class "Default")
+      (node
+        (ref "C65")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R3")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "5")
+        (pintype "INPUT")))
+    (net
+      (code 11)
+      (name "ETH_RXP_J")
+      (class "Default")
+      (node
+        (ref "C65")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "4")
+        (pintype "PASSIVE")))
+    (net
+      (code 12)
+      (name "ETH_RX_TERM")
+      (class "Default")
+      (node
+        (ref "C21")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R3")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R4")
+        (pin "2")
+        (pintype "PASSIVE")))
+    (net
+      (code 13)
+      (name "ETH_TXN")
+      (class "Default")
+      (node
+        (ref "J1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R2")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "1")
+        (pintype "OUTPUT")))
+    (net
+      (code 14)
+      (name "ETH_TXP")
+      (class "Default")
+      (node
+        (ref "J1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "2")
+        (pintype "OUTPUT")))
+    (net
+      (code 15)
+      (name "GND")
+      (class "Default")
+      (node
+        (ref "C10")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C11")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C12")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C13")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C14")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C15")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C16")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C17")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C18")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C19")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C20")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C21")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C23")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C24")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C25")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C26")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C27")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C28")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C29")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C30")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C40")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C41")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C42")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C43")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C44")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C45")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C46")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C47")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C48")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C49")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C50")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C51")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C52")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C53")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C54")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C55")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C56")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C57")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C58")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C59")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C60")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C61")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C62")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C64")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D11")
+        (pin "2")
+        (pintype "POWER-IN"))
+      (node
+        (ref "D12")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J2")
+        (pin "4")
+        (pintype "POWER-IN"))
+      (node
+        (ref "J3")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R22")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R25")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R26")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R30")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R31")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R33")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R34")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R7")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R8")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R9")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U4")
+        (pin "3")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U4")
+        (pin "7")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "22")
+        (pintype "INPUT"))
+      (node
+        (ref "U5")
+        (pin "69")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U6")
+        (pin "2")
+        (pintype "POWER-IN"))
+      (node
+        (ref "U7")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Y1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Y1")
+        (pin "4")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Y2")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Y2")
+        (pin "4")
+        (pintype "PASSIVE")))
+    (net
+      (code 16)
+      (name "ILIM_SET")
+      (class "Default")
+      (node
+        (ref "R25")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U6")
+        (pin "5")
+        (pintype "PASSIVE")))
+    (net
+      (code 17)
+      (name "LED_DIN")
+      (class "Default")
+      (node
+        (ref "R38")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "48")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 18)
+      (name "LED_DIN_R")
+      (class "Default")
+      (node
+        (ref "D11")
+        (pin "3")
+        (pintype "INPUT"))
+      (node
+        (ref "R38")
+        (pin "2")
+        (pintype "PASSIVE")))
+    (net
+      (code 19)
+      (name "PSE_CT12")
+      (class "Default")
+      (node
+        (ref "D1")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "7")
+        (pintype "PASSIVE")))
+    (net
+      (code 20)
+      (name "PSE_CT36")
+      (class "Default")
+      (node
+        (ref "D1")
+        (pin "4")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "8")
+        (pintype "PASSIVE")))
+    (net
+      (code 21)
+      (name "PSE_SP45")
+      (class "Default")
+      (node
+        (ref "D2")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "9")
+        (pintype "PASSIVE")))
+    (net
+      (code 22)
+      (name "PSE_SP78")
+      (class "Default")
+      (node
+        (ref "D2")
+        (pin "4")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "10")
+        (pintype "PASSIVE")))
+    (net
+      (code 23)
+      (name "SHIELD_RJ45")
+      (class "Default")
+      (node
+        (ref "C24")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J1")
+        (pin "SH")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R7")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 24)
+      (name "SWCLK")
+      (class "Default")
+      (node
+        (ref "J3")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "27")
+        (pintype "INPUT")))
+    (net
+      (code 25)
+      (name "SWDIO")
+      (class "Default")
+      (node
+        (ref "J3")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "28")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 26)
+      (name "USB_DM")
+      (class "Default")
+      (node
+        (ref "J2")
+        (pin "2")
+        (pintype "BIDIRECTIONAL"))
+      (node
+        (ref "R29")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R31")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U7")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U7")
+        (pin "4")
+        (pintype "PASSIVE")))
+    (net
+      (code 27)
+      (name "USB_DM_MCU")
+      (class "Default")
+      (node
+        (ref "R29")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "57")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 28)
+      (name "USB_DP")
+      (class "Default")
+      (node
+        (ref "J2")
+        (pin "3")
+        (pintype "BIDIRECTIONAL"))
+      (node
+        (ref "R28")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R30")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U7")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U7")
+        (pin "6")
+        (pintype "PASSIVE")))
+    (net
+      (code 29)
+      (name "USB_DP_MCU")
+      (class "Default")
+      (node
+        (ref "R28")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "58")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 30)
+      (name "USB_EN")
+      (class "Default")
+      (node
+        (ref "R26")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "46")
+        (pintype "BIDIRECTIONAL"))
+      (node
+        (ref "U6")
+        (pin "3")
+        (pintype "INPUT")))
+    (net
+      (code 31)
+      (name "USB_SHIELD")
+      (class "Default")
+      (node
+        (ref "C30")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J2")
+        (pin "SH")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R34")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 32)
+      (name "VBUS_SENSE")
+      (class "Default")
+      (node
+        (ref "C29")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R32")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R33")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "49")
+        (pintype "BIDIRECTIONAL")))
+    (net
+      (code 33)
+      (name "VBUS_USB")
+      (class "Default")
+      (node
+        (ref "C18")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C19")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C20")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "J2")
+        (pin "1")
+        (pintype "POWER-IN"))
+      (node
+        (ref "R32")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U6")
+        (pin "6")
+        (pintype "POWER-OUT"))
+      (node
+        (ref "U7")
+        (pin "5")
+        (pintype "PASSIVE")))
+    (net
+      (code 34)
+      (name "VDD_POE")
+      (class "Default")
+      (node
+        (ref "C1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D2")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D3")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "4")
+        (pintype "POWER-IN")))
+    (net
+      (code 35)
+      (name "VSS")
+      (class "Default")
+      (node
+        (ref "C1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "C14")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D2")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "D3")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U1")
+        (pin "5")
+        (pintype "POWER-IN")))
+    (net
+      (code 36)
+      (name "W5500_1V2O")
+      (class "Default")
+      (node
+        (ref "C62")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "35")
+        (pintype "PASSIVE")))
+    (net
+      (code 37)
+      (name "W5500_TOCAP")
+      (class "Default")
+      (node
+        (ref "C61")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "33")
+        (pintype "PASSIVE")))
+    (net
+      (code 38)
+      (name "XTAL12_XIN")
+      (class "Default")
+      (node
+        (ref "C25")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "23")
+        (pintype "INPUT"))
+      (node
+        (ref "Y1")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 39)
+      (name "XTAL12_XOUT")
+      (class "Default")
+      (node
+        (ref "R37")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "24")
+        (pintype "OUTPUT")))
+    (net
+      (code 40)
+      (name "XTAL12_XO_R")
+      (class "Default")
+      (node
+        (ref "C26")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "R37")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Y1")
+        (pin "3")
+        (pintype "PASSIVE")))
+    (net
+      (code 41)
+      (name "XTAL25_XI")
+      (class "Default")
+      (node
+        (ref "C27")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "44")
+        (pintype "INPUT"))
+      (node
+        (ref "Y2")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 42)
+      (name "XTAL25_XO")
+      (class "Default")
+      (node
+        (ref "C28")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "U5")
+        (pin "45")
+        (pintype "OUTPUT"))
+      (node
+        (ref "Y2")
+        (pin "3")
+        (pintype "PASSIVE")))))

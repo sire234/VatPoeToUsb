@@ -1,0 +1,402 @@
+{
+  "version": "4.0",
+  "circuit_name": "poe_usb_hid_bridge",
+  "design_revision": "Rev 4g (Rev 4f + MagJack LEDs on W5500 LINKLED/ACTLED via R5/R6 330R to +3V3; Rev 4f: D11 plain green LED, C64 removed, whole schematic drawn with wires, pin-1 silk dots, 3D body models U1/U5/J1/J2)",
+  "stage": "layout_complete_rev4g_fab_pending",
+  "last_updated": "2026-10-26",
+  "active_circuit_file": "circuits/poe_usb_hid_bridge/__main__.py",
+  "last_modified_circuit": "circuits/poe_usb_hid_bridge/",
+  "coding_mode": "modular",
+  "requirements_complete": true,
+  "architecture_complete": true,
+  "sourcing_complete": true,
+  "datasheets_complete": true,
+  "erc_status": {
+    "last_run": "2026-10-26",
+    "errors": 0,
+    "warnings": 0,
+    "pass": true,
+    "report_path": "outputs/poe_usb_hid_bridge_rev4g_erc.txt",
+    "kicad_erc": "kicad-cli sch erc rev4g: 0 violations; KiCad netlist == SKiDL netlist (46 nets, tools/netcompare.py)"
+  },
+  "sourced_bom_version": "2026-10-26 Rev 4g: + R5/R6 C25104; 85 refs, 75 JLC placements; 20 extended types; ~25.06 USD/board @10",
+  "block_manifest": [
+    {
+      "block_id": "ethernet_magjack",
+      "block_name": "B1 RJ45 MagJack HR871150C + Ethernet termination + link/activity LEDs (R5/R6)",
+      "filename": "circuits/poe_usb_hid_bridge/ethernet_magjack.py",
+      "interface_nets": [
+        "PSE_CT12",
+        "PSE_CT36",
+        "PSE_SP45",
+        "PSE_SP78",
+        "ETH_TXP",
+        "ETH_TXN",
+        "ETH_RXP",
+        "ETH_RXN",
+        "+3V3A",
+        "+3V3",
+        "GND",
+        "ETH_LED_LINK_N",
+        "ETH_LED_ACT_N"
+      ],
+      "internal_nets": [
+        "ETH_RXP_J",
+        "ETH_RXN_J",
+        "ETH_RX_TERM",
+        "SHIELD_RJ45",
+        "ETH_LED_LINK_A",
+        "ETH_LED_ACT_A"
+      ],
+      "parts": [
+        "J1",
+        "R1",
+        "R2",
+        "R3",
+        "R4",
+        "R5",
+        "R6",
+        "R7",
+        "C21",
+        "C23",
+        "C24",
+        "C65",
+        "C66"
+      ],
+      "status": "done",
+      "erc_errors_attributed": 0
+    },
+    {
+      "block_id": "poe_pd_module",
+      "block_name": "B2 PoE PD module Silvertel Ag9905-LPB (bridges, TVS, module, output C, FB1, D12)",
+      "filename": "circuits/poe_usb_hid_bridge/poe_pd_module.py",
+      "interface_nets": [
+        "PSE_CT12",
+        "PSE_CT36",
+        "PSE_SP45",
+        "PSE_SP78",
+        "+5V",
+        "GND"
+      ],
+      "parts": [
+        "U1",
+        "D1",
+        "D2",
+        "D3",
+        "C1",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "R8",
+        "R9",
+        "FB1",
+        "D12",
+        "TP9"
+      ],
+      "status": "done",
+      "erc_errors_attributed": 0
+    },
+    {
+      "block_id": "ldo_3v3",
+      "block_name": "B4 3.3V LDO TLV75733P",
+      "filename": "circuits/poe_usb_hid_bridge/ldo_3v3.py",
+      "interface_nets": [
+        "+5V",
+        "+3V3",
+        "GND"
+      ],
+      "parts": [
+        "U4",
+        "C15",
+        "C16"
+      ],
+      "status": "done",
+      "erc_errors_attributed": 0
+    },
+    {
+      "block_id": "mcu_w55rp20",
+      "block_name": "B5 W55RP20 MCU+Ethernet, SWD pads only",
+      "filename": "circuits/poe_usb_hid_bridge/mcu_w55rp20.py",
+      "interface_nets": [
+        "+3V3",
+        "+3V3A",
+        "GND",
+        "ETH_TXP",
+        "ETH_TXN",
+        "ETH_RXP",
+        "ETH_RXN",
+        "USB_DP_MCU",
+        "USB_DM_MCU",
+        "USB_EN",
+        "VBUS_SENSE",
+        "LED_DIN",
+        "ETH_LED_LINK_N",
+        "ETH_LED_ACT_N"
+      ],
+      "parts": [
+        "U5",
+        "Y1",
+        "Y2",
+        "FB2",
+        "R22",
+        "R37",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C40",
+        "C41",
+        "C42",
+        "C43",
+        "C44",
+        "C45",
+        "C46",
+        "C47",
+        "C48",
+        "C49",
+        "C50",
+        "C51",
+        "C52",
+        "C53",
+        "C54",
+        "C55",
+        "C56",
+        "C57",
+        "C58",
+        "C59",
+        "C60",
+        "C61",
+        "C62",
+        "J3"
+      ],
+      "status": "done",
+      "erc_errors_attributed": 0
+    },
+    {
+      "block_id": "usb_host_port",
+      "block_name": "B6 USB-A host port (TPS2553, USBLC6, VBUS sense)",
+      "filename": "circuits/poe_usb_hid_bridge/usb_host_port.py",
+      "interface_nets": [
+        "+5V",
+        "GND",
+        "USB_EN",
+        "USB_DP_MCU",
+        "USB_DM_MCU",
+        "VBUS_SENSE"
+      ],
+      "parts": [
+        "U6",
+        "U7",
+        "J2",
+        "R25",
+        "R26",
+        "R28",
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C29",
+        "C30"
+      ],
+      "status": "done",
+      "erc_errors_attributed": 0
+    },
+    {
+      "block_id": "status_led",
+      "block_name": "B7 plain green status LED D11 (MHT193CGCT) + R38 on GPIO28",
+      "filename": "circuits/poe_usb_hid_bridge/status_led.py",
+      "interface_nets": [
+        "GND",
+        "LED_DIN"
+      ],
+      "parts": [
+        "D11",
+        "R38"
+      ],
+      "status": "done",
+      "erc_errors_attributed": 0
+    }
+  ],
+  "part_count": 85,
+  "populated_count": "75 JLC + U1 consigned = 76 (9 DNP: C1, C14, C30, R8, R9, R30, R31, J3, U1 in JLC export; TP9 pad only)",
+  "net_count": 46,
+  "cost_estimate_usd_per_board": {
+    "qty10": 25.06,
+    "qty5": 31.06,
+    "jlc_parts": 10.06,
+    "extended_types": 20,
+    "u1_consigned": 9.0,
+    "note": "excl. PCB, assembly base fee, THT, consignment fee, shipping"
+  },
+  "enclosure": "plastic tube, inner diameter 25 mm; insulation to tube uncritical; max ambient 40 C recommended (measure temperatures on prototype)",
+  "pse_requirement": "IEEE 802.3af/at PSE >= 48 V; passive 24 V PoE not supported",
+  "custom_libs": {
+    "symbols": "libs/poe_usb_hid_bridge.kicad_sym",
+    "footprints": "footprints/poe_usb_hid_bridge.pretty",
+    "used_symbols": [
+      "Ag9905-LPB",
+      "HR871150C",
+      "W55RP20",
+      "TPS2553",
+      "MB6S_MDD"
+    ],
+    "used_footprints": [
+      "Silvertel_Ag9900LPB_SMD",
+      "HanRun_HR871150C",
+      "BX-TYPE-A-MWT4P",
+      "W55RP20_QFN-68-1EP_8x8mm_P0.4mm_EP6.2x6.2mm"
+    ],
+    "unused_in_lib": [
+      "Ag9905LP",
+      "TPS23753A",
+      "TLV431_DBZ",
+      "POE70P-50LD",
+      "E6C0606RGBC3UDA",
+      "Silvertel_Ag9900LP_DIL8",
+      "Coilcraft_POE70P",
+      "EKINGLUX_1616_RGB",
+      "Silvertel_Ag9900LPB_SMD_HandSolder (reserve)"
+    ]
+  },
+  "outputs": {
+    "netlist": "outputs/poe_usb_hid_bridge_rev4g.net",
+    "bom_xml": "outputs/poe_usb_hid_bridge_rev4g_bom.xml",
+    "erc": "outputs/poe_usb_hid_bridge_rev4g_erc.txt",
+    "schematic_pdf": "outputs/poe_usb_hid_bridge_rev4g_schematic.pdf",
+    "renders": "outputs/layout_rev4g/",
+    "fab": "outputs/fab_rev4g_release/",
+    "superseded": "DO NOT USE: fab_rev4f_final, fab_rev4g_final (gerbers absolute, drill at board origin -> 100 mm offset); layout_rev4f, layout_rev4f_3d, rev4f_schematic.pdf are intermediate"
+  },
+  "layout": {
+    "project": "kicad/poe_usb_hid_bridge_rev4g/poe_usb_hid_bridge_rev4g.kicad_pro",
+    "schematic": "kicad/poe_usb_hid_bridge_rev4g/poe_usb_hid_bridge_rev4g.kicad_sch (hierarchical, all sheets wired; generated by tools/sheet_*.py from the label-only rev4e sheets, keeps symbol UUIDs)",
+    "board_file": "kicad/poe_usb_hid_bridge_rev4g/poe_usb_hid_bridge_rev4g.kicad_pcb",
+    "design_rules": "kicad/poe_usb_hid_bridge_rev4g/poe_usb_hid_bridge_rev4g.kicad_dru",
+    "board": "20 x 80 mm, 6 layers, 1.6 mm, stackup JLC06161H-3313 (In1 GND, In2 VBUS_USB, In3 +5V, In4 +3V3)",
+    "drc": {
+      "errors": 0,
+      "unconnected": 0,
+      "parity": 0,
+      "warnings": 18,
+      "warnings_note": "silkscreen only + J1 lib_footprint_mismatch (intentional)",
+      "date": "2026-10-26"
+    },
+    "fab_export_fix": "2026-10-23: drill files had different origin than gerbers (100 mm offset); re-exported with --drill-origin plot, ZIP repacked (13:47). Do not export with --board-plot-params (board plot param drillshape=1 -> drill marks) or set drillshape 0",
+    "second_review_layout_changes": "U4 EP 3 vias 0.45/0.3 (49.15/14.04, 14.60, 15.16) + 2 GND vias (49.40/16.10, 48.75/16.25); 5 GND stitching vias USB area (66.25/5.25, 68.50/12.50, 70.75/9.00, 69.25/13.75, 72.75/13.25)",
+    "pofv_list": {
+      "via_center_in_pad": [
+        "U1 pad1 41.6/4.2",
+        "U1 pad1 42.4/4.2",
+        "C52.1 62.32/13.56",
+        "U4 EP 49.15/14.04",
+        "U4 EP 49.15/14.60",
+        "U4 EP 49.15/15.16"
+      ],
+      "via_edge_touches_pad": [
+        "U5.54 60.79/12.25",
+        "C55.1 59.34/4.68",
+        "R22.1 57.05/4.2",
+        "C50.2 49.6/10.3"
+      ]
+    },
+    "impedance": "ETH 100 ohm diff (0.13/0.2 mm), USB 90 ohm diff (0.15/0.18 mm); RX incl. C65/C66 P/N 60.525/60.529 mm",
+    "vias": "0.45/0.3 standard; 3 vias 0.4/0.2 + 0.1 mm clearance in rule area U5_FANOUT (fab surcharge); via-in-pad per pofv_list (order POFV filled/capped, attach list)",
+    "review_layout_changes": "K1: C65/C66 bottom at x~24.2 in RX channel; H1: XTAL12_XIN 3.2 mm (was 10.2), XOUT 2.2 mm, XO_R 9.7 mm",
+    "j3_location": "bottom, long edge y=20, x~59.4",
+    "fab_output": "outputs/fab_rev4g_release/ (gerbers --use-drill-file-origin + drill --drill-origin plot, both at board origin; ZIP 18 files; BOM/CPL = rev4f + R5/R6)",
+    "rev4f_layout_change": "D11 LED_0603_1608Metric at 163.03/113.56 rot 90 (F.Cu), pads on existing LED_DIN_R/GND track ends; C64 and its 3 track stubs removed; D11 VDD stub + via 160.788/112.245 removed (DRC hole clearance 0.25 mm to +3V3 via 162.32/113.56 and USB_EN via 163.95/114.45 respected). Script: tools/pcb_rev4f_led.py",
+    "rev4g_layout_change": "R5/R6 0402 bottom at (105.0,103.375)/(105.0,114.085) next to J1.11/J1.13, +3V3 vias to In4; cathodes U5.37/39 -> F.Cu stub -> vias (154.1,115.0 0.4/0.2 in U5_FANOUT; 154.9,115.65 0.45/0.3) -> In3 to J1.14/J1.12 (56 mm / 74 mm, tools/pcb_rev4g_magjack_leds.py + tools/pcb_grid_router.py). In3 +5V plane now has two channels near U5 (plane still connected).",
+    "pin1_marks": "filled 0.5 mm silk dots next to pin 1 of U1,U4,U6,U7,Y1,Y2,D1,D2,D3,D11,D12,C11,C18 (group PIN1_MARKS, tools/pcb_pin1_marks.py)",
+    "models_3d": "3dmodels/poe_usb_hid_bridge.3dshapes (box models U1/J1/J2 from datasheet dims), U5 stock QFN-68 8x8 (tools/make_3d_models.py)"
+  },
+  "review_status": "Rev 4g review 2026-10-26 (outputs/design_review.md): ERC/KiCad-ERC/footprints/DRC PASS; HIGH fab drill-origin offset in fab_rev4f_final/fab_rev4g_final fixed by outputs/fab_rev4g_release; MEDIUM: ETH_LED_LINK_N 2.23 mm to J1.7 (ISO_EXC_J1), In3 +5V plane channels, docs SPEC/architecture still Rev 4e",
+  "review_findings": {
+    "fixed": [
+      "K1 Ethernet RX DC-blocking caps C65/C66 6.8 nF X7R 0402 (YAGEO CC0402KRX7R9BB682, LCSC C93654); J1 side nets ETH_RXP_J/ETH_RXN_J; per WIZnet W5500 reference 'connected CT'",
+      "H1 Y1 Abracon ABM8-272-T3 (12 MHz, CL 10 pF, ESR <= 50 ohm, LCSC C20625731), C25/C26 15 pF C0G (C1548), R37 1k - Raspberry Pi reference",
+      "R-ISO-5 insulation to tube mitigated by plastic tube",
+      "R-LAY-8 drill origin vs gerber origin (100 mm offset) - re-exported with --drill-origin plot",
+      "R-PI-13 LDO U4 thermal vias in EP added (3 + 2 GND vias)",
+      "R-LAY-6 USB GND stitching mitigated (5 vias)"
+    ],
+    "second_review": "2026-10-23: function HID->USB->MCU->Ethernet and PoE->5V confirmed, no CRITICAL/HIGH findings in schematic, K1/H1 verified; W5500 SiP pins (CS 20, SCK 21, MISO 22, MOSI 23, INT 24, RST 25, USE_PIO) verified from WIZnet PICO-C",
+    "open_not_implemented": [
+      "R-LAY-7 TOCAP C61 not directly at U5.33",
+      "R-PI-12 decoupling pin 42/43 > 5 mm",
+      "R-ISO-8 R7 0603 overstressed in hipot (1206 HV recommended)",
+      "R-ISO-9 ETH_RXN 1.8 mm to J1.7; PSE_CT12-J1.5 1.74 mm In1; PSE_SP78-J1 SH 2.47 mm In2; J1.8-ETH_RXN_J 2.95 mm B.Cu (all inside J1 ISO exception)",
+      "R-TH-6 D3 only ~0.25 mm to tube wall; J2 15.2 x 7.0 mm per datasheet",
+      "R-LAY-9 CPL rotations are KiCad angles - check in JLC placement viewer (U5, U4, U6, U7, C11, C18, D1-D3, D12, D11, Y1/Y2 by datasheet pin 1)",
+      "R-LAY-10 paste printed on DNP pads (U1, C1, C14, R8, R9, C30); add U1 to BOM/CPL for consignment",
+      "R-LAY-11 do not update J1 footprint from library",
+      "R-AV-2 W55RP20 C43229502 only 89 pcs (2026-10-23) - reserve",
+      "R-FW-1 firmware: VBUS threshold 4.0-4.2 V debounced > 50 ms; PICO_BOARD/flash 2 MB/boot2 as W55RP20-EVB; link via PHYCFGR; R-USB-4 VBUS discharge tau ~27 s",
+      "R4d-3 RUN without external pull-up/C",
+      "R4-2 R9 upper limit (+5V_RAW <= 5.25 V; 0 ohm -> 5.65 V not allowed); VBUS worst case ~4.6 V @ 500 mA",
+      "R-PI-11 PSE must be 802.3af/at >= 48 V (no passive 24 V)",
+      "R-LAY-1 3 vias 0.4/0.2 (surcharge)",
+      "R-LAY-5 POFV list for via-in-pad",
+      "R-ISO-10 (Rev 4g): ETH_LED_LINK_N on In3 2.23 mm to J1.7 PSE_CT12 (inside ISO_EXC_J1) - Hipot covers it",
+      "R-PI-14 (Rev 4g): In3 +5V plane has two LED-track channels near U5 - measure +5V at U4 on prototype"
+    ]
+  },
+  "design_review": "outputs/design_review_rev4.md (Rev 4 delta review; Rev 4b-4e changes documented in architecture/*.md)",
+  "approvals": {
+    "architecture": "approved 2026-10-21: OD-1..OD-13",
+    "sourcing": "approved 2026-10-21",
+    "export_gate": "approved: M1 D12 fitted; M4 J1 creepage deviation accepted with mitigations",
+    "rev4_concept": "approved 2026-10-22: PoE module, board 20 x ~80 mm, 25 mm tube",
+    "rev4b_simplification": "approved 2026-10-22: addressable LED, MagJack LEDs unused, 6 layers",
+    "rev4c_bridges_pads": "SUPERSEDED by Rev 4d (not taken over)",
+    "rev4d_minimal_debug": "approved 2026-10-22: remove UART/RUN/BOOTSEL/OC, LED on +3V3, SWD pads",
+    "rev4e_lpb": "approved 2026-10-23: Ag9905-LPB instead of Ag9905LP",
+    "rev4e_review_k1_h1": "approved 2026-10-23: K1 RX caps C65/C66, H1 crystal per RPi reference; plastic tube (OD-11)"
+  },
+  "sourcing_has_warnings": true,
+  "sourcing_escalation_count": 0,
+  "erc_iteration_count": 0,
+  "architecture_rework_count": 2,
+  "open_points_sample": [
+    "R4-1 / R-TH-1 / R-TH-5 thermal in closed plastic tube, max ambient 40 C (module derating 4.5 W @ 85 C, W55RP20 Tc 85 C, J1 0..70 C) - measure on prototype",
+    "R4-2 VBUS worst case ~4.6 V @ 500 mA -> R9 ADJ trim, +5V_RAW <= 5.25 V (R9 0 ohm not allowed)",
+    "R4-3 PoE detection with C1 DNP (2-3 PSEs)",
+    "R4-4 minimum load 200 mA -> R8 option",
+    "R-ISO-3 / R-ISO-7 hipot 1500 VAC (module spec: 1500 V DC impulse)",
+    "R4d-3 RUN only internal ~50k pull-up (fallback 10k)",
+    "R4e-2 footprint 1:1 check U1 / J1 / J2 before order",
+    "D11 (Rev 4f green 0603) polarity mark K = pad 1 in JLC viewer",
+    "R-ISO-8 R7 0603 in hipot (1206 HV recommended)",
+    "R-PI-11 PSE 802.3af/at >= 48 V",
+    "R-LAY-7 / R-PI-12 layout review recommendations not implemented (R-PI-13, R-LAY-6 fixed/mitigated 2026-10-23)",
+    "R-AV-2 W55RP20 only 89 pcs at JLC - reserve",
+    "R-LAY-9 check CPL rotations in JLC viewer (Y1/Y2 by datasheet pin 1)",
+    "R-ISO-10 ETH_LED_LINK_N 2.23 mm to J1.7 (J1 exception) - hipot",
+    "Use only outputs/fab_rev4g_release (fab_rev4f_final / fab_rev4g_final have 100 mm drill offset)"
+  ],
+  "history": {
+    "rev1_rev3": "discrete TPS23753A flyback, 4 layers; Rev 3 30x80 mm / 35 mm tube variant discarded; snapshot snapshots_rev3_discrete/",
+    "rev4": "Ag9905LP DIL module, 104 refs; snapshot snapshots_rev4/",
+    "rev4b": "WS2812B, Tag-Connect TC2050, 87 refs; snapshot snapshots_rev4b/",
+    "rev4c": "bridges/pads variant, discarded; snapshot snapshots_rev4c/",
+    "rev4d": "minimal debug, 85 refs, layout DRC 0/0, fab outputs/fab_rev4d_final/",
+    "rev4e": "Ag9905-LPB, SWD edge pads J3 (bottom, edge y=20), 82 refs, DRC 0/0/0",
+    "rev4e_review": "K1 C65/C66 + nets ETH_RXP_J/ETH_RXN_J, H1 Y1 ABM8-272-T3 + 15 pF; 84 refs, 42 nets, 74 JLC + U1; DRC 0/0/0 (23 silk warnings)",
+    "rev4e_second_review": "drill origin fix, U4 thermal vias, USB GND stitching, POFV list updated; DRC 0/0/0 (23 warnings) 13:47"
+  },
+  "schematic_tools": {
+    "tools/schgen.py": "redraw sheets with wires, keeps symbol UUIDs (PCB link)",
+    "tools/sheet_*.py": "per-sheet layout scripts (source rev4e -> target project)",
+    "tools/netcompare.py": "KiCad netlist vs SKiDL connectivity",
+    "tools/check_sheet.sh": "per-sheet netcompare + ERC",
+    "tools/sch_preview.py": "render one sheet page to PNG",
+    "tools/render_board.sh": "3D renders incl. consigned U1"
+  }
+}

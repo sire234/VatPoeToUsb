@@ -1,0 +1,16 @@
+# Third-party binaries (download separately)
+tools/freerouting/
+
+# Python
+__pycache__/
+*.pyc
+
+# KiCad local/temp files
+*.kicad_prl
+*-backups/
+*.lck
+fp-info-cache
+_autosave-*
+
+# SKiDL REPL artifacts
+skidl_REPL.*

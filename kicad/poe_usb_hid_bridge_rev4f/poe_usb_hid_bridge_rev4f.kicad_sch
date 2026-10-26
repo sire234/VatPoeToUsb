@@ -1,0 +1,551 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "ee8c511e-7f1f-5f05-b2b0-f14822b2bff7")
+	(paper "A3")
+	(title_block
+		(title "PoE to USB HID Bridge")
+		(date "2026-10-26")
+		(rev "4f")
+		(company "poe_usb_hid_bridge")
+		(comment 1 "Rev 4f: Ag9905-LPB (SMT), gruene Status-LED an GPIO28, SWD-Randpads J3, 6 Lagen 20 x 80 mm")
+		(comment 2 "Quelle: outputs/poe_usb_hid_bridge_rev4f.net (SKiDL), ERC 0/0")
+		(comment 3 "Isolationsgrenze: PRIMÄR = PSE_*, VDD_POE, VSS | SEKUNDÄR = Rest")
+	)
+	(lib_symbols
+
+	)
+	(text "PoE to USB HID Bridge – Rev 4f (Übersicht)"
+		(exclude_from_sim no)
+		(at 20.32 22.86 0)
+		(effects
+			(font
+				(size 3.5 3.5) (bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "3a1fb1b5-2019-4bbb-957d-9504a7368086")
+	)
+	(text "Hierarchischer Schaltplan, generiert aus outputs/poe_usb_hid_bridge_rev4f.net (SKiDL, ERC 0/0)."
+		(exclude_from_sim no)
+		(at 20.32 33.02 0)
+		(effects
+			(font
+				(size 2.0 2.0)
+			)
+			(justify left bottom)
+		)
+		(uuid "6c380302-fdf2-4169-87ab-c12feea38354")
+	)
+	(text "Bauteile innerhalb der Blätter mit Leitungen verbunden; zwischen den Blättern über globale Labels und Power-Symbole (GND, +3V3, +5V)."
+		(exclude_from_sim no)
+		(at 20.32 37.47 0)
+		(effects
+			(font
+				(size 2.0 2.0)
+			)
+			(justify left bottom)
+		)
+		(uuid "e92bcb81-906e-466c-84b7-d3d76d444b4d")
+	)
+	(text "ISOLATIONSGRENZE 1500 V: PRIMÄR (PoE) = PSE_CT12/CT36/SP45/SP78, VDD_POE, VSS (J1-Kabelseite, D1–D3, C1, C14-Pin1, U1-Pins 4/5)."
+		(exclude_from_sim no)
+		(at 20.32 41.91 0)
+		(effects
+			(font
+				(size 2.0 2.0) (bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "cf3267e9-921d-4a7c-9562-e3cd80dcb837")
+	)
+	(text "SEKUNDÄR = alle übrigen Netze. Überquerer: nur U1 (Ag9905-LPB), J1 intern (Übertrager/Bob-Smith), C14 (DNP)."
+		(exclude_from_sim no)
+		(at 20.32 46.36 0)
+		(effects
+			(font
+				(size 2.0 2.0)
+			)
+			(justify left bottom)
+		)
+		(uuid "3a2d7f08-4ad0-4e3e-89d8-0223c7445c1b")
+	)
+	(text "DNP: C1, C14, R8, R9, R30, R31, C30, J3 (SWD-Randpads); U1 = Beistellteil (DNP im JLC-Export, Consigned)."
+		(exclude_from_sim no)
+		(at 20.32 50.8 0)
+		(effects
+			(font
+				(size 2.0 2.0)
+			)
+			(justify left bottom)
+		)
+		(uuid "eba57576-33ac-488f-8c78-b65866171351")
+	)
+	(sheet
+		(at 25.4 68.58)
+		(size 101.6 40.64)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "52d3762f-99e4-56eb-8ed5-c139b9e56d2d")
+		(property "Sheetname" "poe_pd_module1"
+			(at 25.4 67.87 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "poe_pd_module.kicad_sch"
+			(at 25.4 109.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "poe_usb_hid_bridge_rev4f"
+				(path "/ee8c511e-7f1f-5f05-b2b0-f14822b2bff7"
+					(page "2")
+				)
+			)
+		)
+	)
+	(text "B2 poe_pd_module – PoE-PD-Modul Silvertel Ag9905-LPB"
+		(exclude_from_sim no)
+		(at 27.94 76.2 0)
+		(effects
+			(font
+				(size 1.6 1.6) (bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "2006be33-419c-4574-9ca3-ffffd6b478f9")
+	)
+	(text "Mode-A/B-Brücken D1/D2 (MB6S) → TVS D3 SMAJ58A → U1 Ag9905-LPB (Cla…"
+		(exclude_from_sim no)
+		(at 27.94 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "57c39809-7e6e-4499-873c-c2de9f3ea726")
+	)
+	(text "Ausgang +5V_RAW: C11 100 µF Polymer + C12 22 µF + C10 → FB1 → +5V, …"
+		(exclude_from_sim no)
+		(at 27.94 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "028f6fc2-327a-4e16-9a5d-6b4d85702690")
+	)
+	(text "DNP-Optionen: C1 (Eingangs-C), R8 (Mindestlast RB), R9 (ADJ-Trimm),…"
+		(exclude_from_sim no)
+		(at 27.94 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f56ff96c-9a98-4d5e-8a81-4935083d2b1e")
+	)
+	(sheet
+		(at 152.4 68.58)
+		(size 101.6 40.64)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c6b30813-9c97-5654-98f3-c50d8b4e9fb1")
+		(property "Sheetname" "ethernet_magjack1"
+			(at 152.4 67.87 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ethernet_magjack.kicad_sch"
+			(at 152.4 109.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "poe_usb_hid_bridge_rev4f"
+				(path "/ee8c511e-7f1f-5f05-b2b0-f14822b2bff7"
+					(page "3")
+				)
+			)
+		)
+	)
+	(text "B1 ethernet_magjack – RJ45-MagJack HR871150C"
+		(exclude_from_sim no)
+		(at 154.94 76.2 0)
+		(effects
+			(font
+				(size 1.6 1.6) (bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "5570ab9b-48db-41d6-b03f-b5d7fff3120b")
+	)
+	(text "Kabelseite (PRIMÄR, PoE): J1.7–J1.10 → PSE_CT12/CT36/SP45/SP78 (zu …"
+		(exclude_from_sim no)
+		(at 154.94 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "935682fe-1dcd-49c3-ad9f-4bc06d96f9d9")
+	)
+	(text "PHY-Seite (SEKUNDÄR): TX/RX-Paare mit 49,9-Ω-Terminierung, CT an +3…"
+		(exclude_from_sim no)
+		(at 154.94 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c8f9eb1-ad5f-442c-acee-daf48fc3f874")
+	)
+	(text "MagJack-LEDs J1.11–14 unbenutzt (NC)"
+		(exclude_from_sim no)
+		(at 154.94 90.17 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6682ae2f-e3ca-47e2-99f9-33972efd1b2c")
+	)
+	(sheet
+		(at 279.4 68.58)
+		(size 101.6 40.64)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "470f6a4f-cc1a-52d2-a76b-bd0b280a57d3")
+		(property "Sheetname" "ldo_3v3_1"
+			(at 279.4 67.87 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ldo_3v3.kicad_sch"
+			(at 279.4 109.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "poe_usb_hid_bridge_rev4f"
+				(path "/ee8c511e-7f1f-5f05-b2b0-f14822b2bff7"
+					(page "4")
+				)
+			)
+		)
+	)
+	(text "B4 ldo_3v3 – 3,3-V-LDO TLV75733P"
+		(exclude_from_sim no)
+		(at 281.94 76.2 0)
+		(effects
+			(font
+				(size 1.6 1.6) (bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "3c87c202-2e0b-470a-81fb-911599dc9223")
+	)
+	(text "+5V → +3V3 (1 A), C15 Eingang, C16 Ausgang"
+		(exclude_from_sim no)
+		(at 281.94 82.55 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1bb00bc6-2a41-4c7c-8e48-927e0a9e98ae")
+	)
+	(sheet
+		(at 25.4 129.54)
+		(size 101.6 40.64)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "23c225e6-71c2-5521-bc3a-accffd878771")
+		(property "Sheetname" "mcu_w55rp20_1"
+			(at 25.4 128.83 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mcu_w55rp20.kicad_sch"
+			(at 25.4 170.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "poe_usb_hid_bridge_rev4f"
+				(path "/ee8c511e-7f1f-5f05-b2b0-f14822b2bff7"
+					(page "5")
+				)
+			)
+		)
+	)
+	(text "B5 mcu_w55rp20 – W55RP20 (RP2040 + W5500)"
+		(exclude_from_sim no)
+		(at 27.94 137.16 0)
+		(effects
+			(font
+				(size 1.6 1.6) (bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "cc9c12e1-44a0-4345-b44f-95b9e0e1da66")
+	)
+	(text "Entkopplung C40–C60, FB2 → +3V3A, Quarze Y1 12 MHz / Y2 25 MHz, EXR…"
+		(exclude_from_sim no)
+		(at 27.94 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0db3132c-f1e5-450f-9668-0a4450f9f71a")
+	)
+	(text "SWD-Randpads J3 (1 SWCLK, 2 GND, 3 SWDIO, 4 +3V3) für Stiftleiste 2…"
+		(exclude_from_sim no)
+		(at 27.94 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ab6a8a9b-e03c-447f-8c11-766948a69252")
+	)
+	(sheet
+		(at 152.4 129.54)
+		(size 101.6 40.64)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f3cbe4bf-a763-5f55-9b69-04c81eaf462e")
+		(property "Sheetname" "usb_host_port1"
+			(at 152.4 128.83 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb_host_port.kicad_sch"
+			(at 152.4 170.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "poe_usb_hid_bridge_rev4f"
+				(path "/ee8c511e-7f1f-5f05-b2b0-f14822b2bff7"
+					(page "6")
+				)
+			)
+		)
+	)
+	(text "B6 usb_host_port – USB-A-Host"
+		(exclude_from_sim no)
+		(at 154.94 137.16 0)
+		(effects
+			(font
+				(size 1.6 1.6) (bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c6d13ca-5c01-45f6-b5fa-28d9f5adbb56")
+	)
+	(text "TPS2553 Lastschalter (R25 44,2 k → 532–659 mA), FAULT offen; USBLC6…"
+		(exclude_from_sim no)
+		(at 154.94 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "892a8258-e4e8-4d02-87da-2f740cf07ec2")
+	)
+	(text "R30/R31 (15 k) und C30 DNP"
+		(exclude_from_sim no)
+		(at 154.94 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ced6fd2d-2a70-4791-a01d-9307581ef729")
+	)
+	(sheet
+		(at 279.4 129.54)
+		(size 101.6 40.64)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "364e9637-e1bb-5214-b7e0-18ff27760084")
+		(property "Sheetname" "status_led1"
+			(at 279.4 128.83 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "status_led.kicad_sch"
+			(at 279.4 170.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "poe_usb_hid_bridge_rev4f"
+				(path "/ee8c511e-7f1f-5f05-b2b0-f14822b2bff7"
+					(page "7")
+				)
+			)
+		)
+	)
+	(text "B7 status_led – grüne Status-LED an GPIO28"
+		(exclude_from_sim no)
+		(at 281.94 137.16 0)
+		(effects
+			(font
+				(size 1.6 1.6) (bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "2c720a56-788a-4e74-991c-e743d710964b")
+	)
+	(text "LED_DIN (GPIO28) → R38 330 Ω → D11 grün (MHT193CGCT) → GND, High = an"
+		(exclude_from_sim no)
+		(at 281.94 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d71ac234-2299-46cf-a781-aa5470ec6e6d")
+	)
+	(text "PWR_FLAG-Symbole (ERC) sitzen in den Unterblättern an je einem Pin der Netze: +3V3A, +5V, GND, VDD_POE, VSS"
+		(exclude_from_sim no)
+		(at 25.4 200.66 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+			)
+			(justify left bottom)
+		)
+		(uuid "6049a6b7-5185-44ce-aa92-0536a491a9d4")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

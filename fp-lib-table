@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "poe_usb_hid_bridge")(type "KiCad")(uri "${KIPRJMOD}/footprints/poe_usb_hid_bridge.pretty")(options "")(descr "Project footprints poe_usb_hid_bridge"))
+)
