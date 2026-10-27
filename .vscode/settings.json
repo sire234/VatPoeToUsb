@@ -28,5 +28,7 @@
         "titleBar.inactiveBackground": "#efc7c999",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#efc7c9"
+    "peacock.color": "#efc7c9",
+    "cmake.sourceDirectory": "C:/Users/simon/Documents/Projects/Vat/poe-to-usb/firmware",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/firmware/build/compile_commands.json"
 }

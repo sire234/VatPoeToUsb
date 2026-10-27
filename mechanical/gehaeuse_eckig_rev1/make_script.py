@@ -22,6 +22,7 @@ X0, X1 = -2.0, 82.1           # outer length (inner 0 ... 80.1)
 YO = 12.2                     # outer half width (inner 10.2)
 ZB, ZS, ZT = -5.4, 4.0, 13.4  # tray bottom, seam, cover top
 W = 2.0                       # wall
+LIPS = ((26, 40), (56, 70))   # snap lip x ranges (per side)
 
 # ---------------- Wanne (tray) ----------------
 cmd("solid.box", length=X1 - X0, width=2 * YO, height=ZS - ZB, corner=[X0, -YO, ZB],
@@ -46,11 +47,12 @@ cmd("solid.box", length=80.1, width=0.65, height=3.4, corner=[0, -10.25, -3.4], 
 # RJ45 front: wall only below the PCB top inside the jack width
 cmd("solid.box", length=3.2, width=16.7, height=4, corner=[-3, -8.35, 1.6], operation="cut",
     targets=["Wanne"], name="RJ45_Wanne")
-# snap groove inside both long walls
-cmd("solid.box", length=78, width=0.6, height=1.0, corner=[1, 10.1, 2.5], operation="cut",
-    targets=["Wanne"], name="Rastnut_R")
-cmd("solid.box", length=78, width=0.6, height=1.0, corner=[1, -10.7, 2.5], operation="cut",
-    targets=["Wanne"], name="Rastnut_L")
+# snap pockets inside both long walls, only as long as the lips (+0.15 per end): the lip ends
+# hit the pocket ends, so the cover cannot slide lengthwise on the tray
+for i, (xa, xb) in enumerate(LIPS):
+    for side, y in (("R", 10.1), ("L", -10.7)):
+        cmd("solid.box", length=xb - xa + 0.3, width=0.6, height=1.0, corner=[xa - 0.15, y, 2.5],
+            operation="cut", targets=["Wanne"], name=f"Rasttasche_{side}{i}")
 # low air intake slots under the PCB (PoE side)
 cmd("sketch.create", plane="XZ", name="ZuluftSkizze")
 cmd("sketch.slot.overall", p0=[24, 1.5], p1=[44, 1.5], width=2)
@@ -72,7 +74,7 @@ cmd("solid.box", length=24.65, width=16.7, height=11, corner=[-3, -8.35, 3.9], o
 cmd("solid.box", length=3.5, width=15.6, height=7.4, corner=[79.5, -7.8, 1.6], operation="cut",
     targets=["Deckel", "Wanne"], name="USB_Ausschnitt")
 # snap lips (2 per side, x 26-40 and 56-70): lip, bridge into the cover wall, 45 deg bump
-for i, (xa, xb) in enumerate(((26, 40), (56, 70))):
+for i, (xa, xb) in enumerate(LIPS):
     cmd("solid.box", length=xb - xa, width=0.8, height=2.95, corner=[xa, 9.35, 1.65],
         operation="join", targets=["Deckel"], name=f"Lippe_{i}")
     cmd("solid.box", length=xb - xa, width=1.25, height=0.6, corner=[xa, 9.35, 4.0],

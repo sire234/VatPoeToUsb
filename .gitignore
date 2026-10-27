@@ -14,3 +14,6 @@ _autosave-*
 
 # SKiDL REPL artifacts
 skidl_REPL.*
+
+# Firmware build output
+firmware/build/
