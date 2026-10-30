@@ -30,11 +30,12 @@ cmd("solid.box", length=X1 - X0, width=2 * YO, height=ZS - ZB, corner=[X0, -YO, 
 cmd("solid.fillet", body="Wanne", radius=2, name="Wanne_Ecken",
     edges=[[X0, YO, 0], [X0, -YO, 0], [X1, YO, 0], [X1, -YO, 0]])
 cmd("solid.shell", body="Wanne", faces=[[40, 0, ZS]], thickness=W, name="Wanne_Schale")
-# plinth with chamfered foot and 4 cable tie tunnels (8 x 2.1, through in y)
-cmd("solid.box", length=80, width=18, height=3.4, corner=[0, -9, -8.7], operation="join",
+# plinth as wide as the tray (flush long sides, no overhang to print), chamfered foot and
+# 4 cable tie tunnels (8 x 2.1, through in y)
+cmd("solid.box", length=80, width=2 * YO, height=3.4, corner=[0, -YO, -8.7], operation="join",
     targets=["Wanne"], name="Sockel")
 cmd("solid.chamfer", body="Wanne", distance=0.8, name="Sockel_Fase",
-    edges=[[40, 9, -8.7], [40, -9, -8.7], [0, 0, -8.7], [80, 0, -8.7]])
+    edges=[[40, YO, -8.7], [40, -YO, -8.7], [0, 0, -8.7], [80, 0, -8.7]])
 cmd("solid.box", length=8, width=30, height=2.1, corner=[2, -15, -7.5], operation="cut",
     targets=["Wanne"], name="Kabelbinder")
 cmd("solid.pattern.rectangular", features=["Kabelbinder"], dir1=[1, 0, 0], count1=4,
@@ -74,20 +75,39 @@ cmd("solid.box", length=24.65, width=16.7, height=11, corner=[-3, -8.35, 3.9], o
 # USB opening (J2 z 1.6 ... 8.6, |y| <= 7.65) through cover and tray end walls
 cmd("solid.box", length=3.5, width=15.6, height=7.4, corner=[79.5, -7.8, 1.6], operation="cut",
     targets=["Deckel", "Wanne"], name="USB_Ausschnitt")
-# snap lips (2 per side, x 26-40 and 56-70): lip, bridge into the cover wall, bump
+# snap lips (2 per side, x 26-40 and 56-70): lip, bridge into the cover wall, bump. Both sides
+# are built explicitly: solid.mirror dropped the bumps on the -y side.
 for i, (xa, xb) in enumerate(LIPS):
-    cmd("solid.box", length=xb - xa, width=0.8, height=2.95, corner=[xa, 9.35, 1.65],
-        operation="join", targets=["Deckel"], name=f"Lippe_{i}")
-    cmd("solid.box", length=xb - xa, width=1.25, height=0.6, corner=[xa, 9.35, 4.0],
-        operation="join", targets=["Deckel"], name=f"Steg_{i}")
-    cmd("sketch.create", plane="YZ", offset=xa, name=f"NockeSkizze_{i}")
-    # bump 0.35 into the wall (tip y 10.55): 45 deg lead-in below, 30 deg retaining flank above
-    cmd("sketch.line", points=[[10.0, 2.3], [10.55, 2.85], [10.55, 3.0], [10.0, 3.32]], closed=True,
-        infer=False)
-    cmd("sketch.finish")
-    cmd("solid.extrude", distance=xb - xa, operation="join", targets=["Deckel"], name=f"Nocke_{i}")
-cmd("solid.mirror", features=["Lippe_0", "Steg_0", "Nocke_0", "Lippe_1", "Steg_1", "Nocke_1"],
-    plane="XZ", combine=True, name="Rastlippen_L")
+    for side, s in (("R", 1), ("L", -1)):
+        cmd("solid.box", length=xb - xa, width=0.8, height=2.95,
+            corner=[xa, 9.35 if s > 0 else -10.15, 1.65], operation="join", targets=["Deckel"],
+            name=f"Lippe_{side}{i}")
+        cmd("solid.box", length=xb - xa, width=1.25, height=0.6,
+            corner=[xa, 9.35 if s > 0 else -10.6, 4.0], operation="join", targets=["Deckel"],
+            name=f"Steg_{side}{i}")
+        cmd("sketch.create", plane="YZ", offset=xa, name=f"NockeSkizze_{side}{i}")
+        # bump 0.35 into the wall (tip |y| 10.55): 45 deg lead-in below, 30 deg retaining flank above
+        cmd("sketch.line", points=[[s * 10.0, 2.3], [s * 10.55, 2.85], [s * 10.55, 3.0],
+                                   [s * 10.0, 3.32]], closed=True, infer=False)
+        cmd("sketch.finish")
+        cmd("solid.extrude", distance=xb - xa, operation="join", targets=["Deckel"],
+            name=f"Nocke_{side}{i}")
+# locating blocks in the 4 inner corners: they reach 1.8 below the seam (to z 2.2, 0.6 above
+# the PCB top) into the tray and sit 0.1 off its end and side walls, so the cover cannot slide
+# lengthwise or sideways. Clear of J1 (|y| <= 8.05) and J2 (|y| <= 7.65): blocks at |y| >= 8.6.
+# Each is a root fused into the cover corner (z 4.0 ... 5.0) and a tongue below the seam with
+# a 0.4 lead-in chamfer on its two wall-facing bottom edges.
+for xe, sx in ((0.0, 1), (80.1, -1)):
+    for side, s in (("R", 1), ("L", -1)):
+        n = f"{'V' if sx > 0 else 'H'}{side}"
+        cmd("solid.box", length=3, width=1.6, height=1.0,
+            corner=[xe if sx > 0 else xe - 3, 8.6 if s > 0 else -10.2, 4.0], operation="join",
+            targets=["Deckel"], name=f"Eckanschlag_Fuss_{n}")
+        cmd("solid.box", length=2.9, width=1.5, height=1.8,
+            corner=[xe + 0.1 if sx > 0 else xe - 3, 8.6 if s > 0 else -10.1, 2.2],
+            operation="join", targets=["Deckel"], name=f"Eckanschlag_{n}")
+        cmd("solid.chamfer", body="Deckel", distance=0.4, name=f"Eckanschlag_Fase_{n}",
+            edges=[[xe + sx * 1.55, s * 10.1, 2.2], [xe + sx * 0.1, s * 9.35, 2.2]])
 # status LED above D11, countersunk
 cmd("sketch.create", plane="XY", offset=14, name="LEDSkizze")
 cmd("sketch.circle.center", center=[63.03, -3.56], diameter=4.48)

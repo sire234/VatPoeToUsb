@@ -9,7 +9,7 @@ Koordinaten: x längs (0 = RJ45-Platinenkante), y = −(KiCad-y − 10), z = 0 a
 - **`A1_eckig_druckplatte.3mf`**: Wanne (Boden unten) und Deckel (kopfüber, Oberseite unten) nebeneinander auf der Platte.
 - Einzeln: `A1_wanne.stl`, `A1_deckel_kopfueber.stl`; Montagelage: `gehaeuse_eckig.3mf`, `gehaeuse_eckig.step`.
 - PETG, 0,2 mm Schicht, 3 Wände, 15 % Füllung, **keine Stützen** (Kabelbinder-Tunnel überbrücken 8 mm), kein Brim nötig.
-- Gewicht: Wanne ≈ 13,7 g, Deckel ≈ 6,9 g.
+- Gewicht: Wanne ≈ 15,3 g, Deckel ≈ 7,0 g.
 
 ## Masse
 | Teil | Wert |
@@ -17,9 +17,10 @@ Koordinaten: x längs (0 = RJ45-Platinenkante), y = −(KiCad-y − 10), z = 0 a
 | Aussen | 84,1 × 24,4 × 22,1 mm (z −8,7 … 13,4), RJ45 bis z 14,9; Ecken R 2, Deckel-Oberkante R 1,5, Wand 2 mm |
 | Trennfuge | z 4,0 (2,4 mm über der Platinenoberseite) – als bewusste Linie rundum |
 | Wanne | Boden z −5,4 … −3,4; Auflageleisten für die Platine an beiden Längsseiten (|y| ≥ 9,6, frei von den Unterseiten-Bauteilen); Front unterhalb der Platine geschlossen (Anschlag), RJ45 von oben eingelegt |
-| Sockel | 80 × 18 × 3,4 mm, Fase 0,8, **4 Kabelbinder-Tunnel 8 × 2,1** quer bei x 2, 24, 46, 68 |
+| Sockel | 80 × 24,4 × 3,4 mm (so breit wie das Gehäuse, Längsseiten bündig – kein Überhang beim Druck), Fase 0,8, **4 Kabelbinder-Tunnel 8 × 2,1** quer bei x 2, 24, 46, 68 |
 | Deckel | Innenhöhe bis z 11,4 (PoE-Modul max. 10,8); RJ45-Aussparung 24,6 × 16,7 durch Front und Dach; USB-Ausschnitt 15,6 × 7,4 in Stirnwand (Deckel + Wanne) |
-| Rastung | 4 Rastlippen (je 14 mm, 0,8 mm dick) innen an den Längswänden, Nocken greifen 0,35 mm in die Wand (Einführschräge unten 45°, Haltekante oben 30° zur Waagrechten) in je eine Rasttasche der Wanne (z 2,45 … 3,2, 0,55 mm tief, nur 0,15 mm länger als die Lippe pro Ende); die Taschenoberkante liegt auf der Haltekante, der eingerastete Deckel wird nach unten gezogen – die Taschenenden sind der Längsanschlag, der Deckel kann nicht mehr längs verschoben werden; die Lippen drücken die Platine zugleich auf die Auflageleisten |
+| Rastung | 4 Rastlippen (je 14 mm, 0,8 mm dick, 2 pro Seite, beide Seiten einzeln modelliert) innen an den Längswänden, Nocken greifen 0,35 mm in die Wand (Einführschräge unten 45°, Haltekante oben 30° zur Waagrechten) in je eine Rasttasche der Wanne (z 2,45 … 3,2, 0,55 mm tief, nur 0,15 mm länger als die Lippe pro Ende); die Taschenoberkante liegt auf der Haltekante, der eingerastete Deckel wird nach unten gezogen; die Lippen drücken die Platine zugleich auf die Auflageleisten |
+| Eckanschläge | 4 Zentrierklötze in den Innenecken des Deckels (3 × 1,5 mm, ragen 1,8 mm unter die Trennfuge bis z 2,2 = 0,6 mm über der Platinenoberseite, Einführfase 0,4), je 0,1 mm Spiel zu Stirn- und Längswand der Wanne – der Deckel kann weder längs noch quer verschoben werden. Frei von J1/J2 (Klötze bei \|y\| ≥ 8,6) |
 | Lüftung | Dach: 5 Querschlitze über dem PoE-Modul (angefast 2 → 3 mm); Seiten: 2 Schlitze je Seite im Deckel + 1 Zuluftschlitz je Seite in der Wanne unter der Platine (Kamineffekt) |
 | Status-LED | Bohrung im Dach über D11, angesenkt Ø 2,4 → 4 |
 | Logo | „VAT“ 5,5 mm, 0,6 mm tief in der Seitenwand (+y) – Platzhalter bis zum echten SVG |
