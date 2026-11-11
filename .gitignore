@@ -17,3 +17,6 @@ skidl_REPL.*
 
 # Firmware build output
 firmware/build/
+firmware/blinky/build/
+firmware/hwtest/build/
+firmware/build-tusbdebug/
