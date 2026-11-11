@@ -20,3 +20,8 @@ firmware/build/
 firmware/blinky/build/
 firmware/hwtest/build/
 firmware/build-tusbdebug/
+
+# valve-scan build output
+tools/valve-scan/bin/
+tools/valve-scan/obj/
+tools/valve-scan/publish/
