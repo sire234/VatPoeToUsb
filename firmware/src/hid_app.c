@@ -67,16 +67,24 @@ void tuh_hid_mount_cb(uint8_t dev_addr, uint8_t idx, const uint8_t *desc, uint16
 
     printf("HID: mount addr %u idx %u %04x:%04x %s, report desc %u bytes\n",
            dev_addr, idx, vid, pid, protocol_name(proto), desc_len);
+    if (proto != HID_ITF_PROTOCOL_KEYBOARD && proto != HID_ITF_PROTOCOL_MOUSE) {
+        // report descriptor of unknown devices, for analysis (RTT only)
+        for (uint16_t i = 0; i < desc_len; i++)
+            printf("%s%02x%s", i % 16 ? " " : "HID:   ", desc[i], (i % 16 == 15 || i == desc_len - 1) ? "\n" : "");
+    }
     app_eventf("#HID connected %u.%u %04x:%04x %s\n", dev_addr, idx, vid, pid, protocol_name(proto));
 
     if (proto == HID_ITF_PROTOCOL_KEYBOARD)
         memset(&prev_kbd[dev_addr], 0, sizeof prev_kbd[dev_addr]);
+    if (valve_is_valve(dev_addr))
+        valve_mount(dev_addr, idx);
     if (!tuh_hid_receive_report(dev_addr, idx))
         printf("HID: cannot request report from %u.%u\n", dev_addr, idx);
 }
 
 void tuh_hid_umount_cb(uint8_t dev_addr, uint8_t idx) {
     printf("HID: unmount addr %u idx %u\n", dev_addr, idx);
+    valve_unmount(dev_addr);
     app_eventf("#HID disconnected %u.%u\n", dev_addr, idx);
 }
 
@@ -90,7 +98,8 @@ void tuh_hid_report_received_cb(uint8_t dev_addr, uint8_t idx, const uint8_t *re
         process_mouse(report, len);
         break;
     default:
-        process_generic(dev_addr, idx, report, len);
+        if (!valve_report(dev_addr, report, len))
+            process_generic(dev_addr, idx, report, len);
         break;
     }
     led_activity();

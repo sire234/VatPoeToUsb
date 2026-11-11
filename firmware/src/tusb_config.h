@@ -23,10 +23,13 @@
 
 #define CFG_TUH_ENUMERATION_BUFSIZE 256
 
-#define CFG_TUH_HUB             1                     // one external hub (e.g. keyboard + stick)
-#define CFG_TUH_DEVICE_MAX      (3 * CFG_TUH_HUB + 1) // devices behind the hub + the hub itself
+// Two hubs: many 7-port hubs are two cascaded 4-port hubs (e.g. GL850G behind GL850G). Hubs get
+// their own addresses after the device addresses; if none is left, enumeration stops for good.
+#define CFG_TUH_HUB             2
+#define CFG_TUH_DEVICE_MAX      8                     // device addresses, hubs not included
 #define CFG_TUH_HID             (3 * CFG_TUH_DEVICE_MAX) // keyboards often have 2-3 HID interfaces
-#define CFG_TUH_MSC             1
+#define CFG_TUH_MSC             0                     // no mass storage: the virtual CD-ROMs of
+                                                      // composite HID devices stay untouched
 #define CFG_TUH_CDC             0
 #define CFG_TUH_VENDOR          0
 

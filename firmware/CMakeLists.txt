@@ -1,5 +1,6 @@
 # Example firmware for the PoE-USB-HID bridge (Rev 4g, W55RP20)
-#   USB host (TinyUSB): hub, keyboard/barcode scanner, mouse, generic HID, USB stick (FatFs)
+#   USB host (TinyUSB): hub, keyboard/barcode scanner, mouse, generic HID (mass storage, e.g. CD-ROMs of
+#   composite devices, is deliberately not supported)
 #   Ethernet (W5500 via PIO-SPI, WIZnet ioLibrary): DHCP, TCP server for the HID data, mDNS/DNS-SD
 #   Debug output: SEGGER RTT over SWD (no UART on the board)
 cmake_minimum_required(VERSION 3.13)
@@ -37,25 +38,18 @@ target_include_directories(iolibrary PUBLIC
 target_compile_definitions(iolibrary PUBLIC _WIZCHIP_=W5500)
 target_compile_options(iolibrary PRIVATE -w)
 
-# FatFs as shipped with TinyUSB (lib/tinyusb/lib/fatfs); disk_* glue is in src/msc_app.c
-set(FATFS_DIR ${PICO_TINYUSB_PATH}/lib/fatfs/source)
-add_library(fatfs STATIC
-    ${FATFS_DIR}/ff.c
-    ${FATFS_DIR}/ffsystem.c
-    ${FATFS_DIR}/ffunicode.c)
-target_include_directories(fatfs PUBLIC ${FATFS_DIR})
-target_compile_options(fatfs PRIVATE -w)
-
 add_executable(poe_usb_hid_bridge
     src/main.c
     src/led.c
     src/usb_port.c
     src/hid_app.c
-    src/msc_app.c
+    src/valve.c
     src/w5500_pio_spi.c
     src/net.c
     src/mdns.c)
 target_include_directories(poe_usb_hid_bridge PRIVATE src)
+# TinyUSB log level for USB analysis: -DLOG=2 (read by the SDK's TinyUSB, sets CFG_TUSB_DEBUG;
+# 1 errors, 2 enumeration, 3 everything), output via RTT. Use a separate build dir, e.g. build-tusbdebug.
 target_compile_options(poe_usb_hid_bridge PRIVATE -Wall -Wextra -Wno-unused-parameter)
 target_link_libraries(poe_usb_hid_bridge PRIVATE
     pico_stdlib
@@ -63,8 +57,7 @@ target_link_libraries(poe_usb_hid_bridge PRIVATE
     hardware_adc
     hardware_pio
     tinyusb_host
-    iolibrary
-    fatfs)
+    iolibrary)
 
 # printf -> RTT (J-Link / probe-rs); UART and USB stdio are not available on this board
 pico_enable_stdio_rtt(poe_usb_hid_bridge 1)

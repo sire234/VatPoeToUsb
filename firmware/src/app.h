@@ -7,7 +7,7 @@
 #include <stdint.h>
 
 // ---- main.c ----
-// HID data / events: to the TCP client (net.c) and to the log file on a USB stick (msc_app.c)
+// HID data / events: to the TCP client (net.c)
 void app_emit(const char *s, size_t len);
 void app_eventf(const char *fmt, ...) __attribute__((format(printf, 1, 2)));
 size_t app_status(char *buf, size_t size);
@@ -36,10 +36,14 @@ float usb_port_vbus(void);
 
 // ---- hid_app.c: TinyUSB HID host callbacks only ----
 
-// ---- msc_app.c: USB stick, FatFs, HIDLOG.TXT ----
-void msc_app_task(void);
-void msc_log_queue(const char *s, size_t len);
-bool msc_app_mounted(void);
+// ---- valve.c: VAT valves (272b:0010), text commands over the vendor HID interface ----
+bool valve_is_valve(uint8_t dev_addr);
+void valve_mount(uint8_t dev_addr, uint8_t idx);
+void valve_unmount(uint8_t dev_addr);
+bool valve_report(uint8_t dev_addr, const uint8_t *report, uint16_t len);
+void valve_request(uint8_t dev_addr, const char *cmd);   // reply: "#V<addr> <text>" via app_emit
+size_t valve_list(char *buf, size_t size);
+void valve_task(void);
 
 // ---- w5500_pio_spi.c: W5500 inside the W55RP20 ----
 void w5500_pio_spi_init(void);
@@ -52,6 +56,7 @@ void net_init(void);
 void net_task(void);
 net_state_t net_state(void);
 void net_queue(const char *s, size_t len);
+bool net_queue_fits(size_t len);        // true if len bytes fit into the TCP send buffer now
 void net_ip_string(char *buf, size_t size);
 
 // ---- mdns.c: poe-hid-xxxxxx.local + DNS-SD _poehid._tcp ----

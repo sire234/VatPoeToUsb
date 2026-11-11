@@ -2,9 +2,12 @@
 //
 // The TCP client receives everything app_emit() produces: plain ASCII from keyboards / barcode
 // scanners ("\r\n" after Enter) and '#'-prefixed lines for events, mice and other HID devices.
-// Commands from the client (one per line): "status", "usb on", "usb off".
+// Commands from the client (one per line): "status", "usb on", "usb off", "valves",
+// "v<addr> <text command>" (VAT valve, e.g. "v1 p:0B0F10010000", reply "#V1 <reply>", see valve.c).
 // Test: nc <ip> 5000   (or PuTTY, connection type "Raw")
+#include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "pico/stdlib.h"
 #include "pico/unique_id.h"
@@ -18,7 +21,7 @@
 #define SOCK_MDNS       2
 #define TCP_PORT        5000
 #define DHCP_TIMEOUT_MS 15000
-#define TX_BUF          2048
+#define TX_BUF          8192            // a valve reply part can be about 4 KB
 
 // used when DHCP fails
 static const uint8_t static_ip[4] = { 192, 168, 1, 200 };
@@ -33,7 +36,7 @@ static bool client_connected;
 
 static char tx_buf[TX_BUF];             // ring buffer, filled by app_emit()
 static size_t tx_head, tx_tail;
-static char rx_line[64];
+static char rx_line[96];
 static size_t rx_len;
 
 static uint32_t now_ms(void) {
@@ -60,6 +63,11 @@ void net_queue(const char *s, size_t len) {
         tx_buf[tx_head] = *s++;
         tx_head = next;
     }
+}
+
+bool net_queue_fits(size_t len) {
+    size_t used = (tx_head + TX_BUF - tx_tail) % TX_BUF;
+    return client_connected && len < TX_BUF - 1 - used;
 }
 
 void net_init(void) {
@@ -106,8 +114,21 @@ static void handle_command(const char *cmd) {
     } else if (strcmp(cmd, "usb off") == 0) {
         usb_port_set(false);
         n = snprintf(reply, sizeof reply, "#OK usb off\n");
+    } else if (strcmp(cmd, "valves") == 0) {
+        n = valve_list(reply, sizeof reply);
+    } else if (cmd[0] == 'v' && isdigit((unsigned char)cmd[1])) {
+        char *rest;
+        unsigned long addr = strtoul(cmd + 1, &rest, 10);
+        if (*rest != ' ' || addr > 255) {
+            n = snprintf(reply, sizeof reply, "#ERR usage: v<addr> <command>, e.g. v1 p:0B0F10010000\n");
+        } else {
+            while (*rest == ' ')
+                rest++;
+            valve_request((uint8_t)addr, rest);
+            return;
+        }
     } else if (cmd[0]) {
-        n = snprintf(reply, sizeof reply, "#ERR commands: status, usb on, usb off\n");
+        n = snprintf(reply, sizeof reply, "#ERR commands: status, usb on, usb off, valves, v<addr> <command>\n");
     } else {
         return;
     }

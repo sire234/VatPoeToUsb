@@ -1,6 +1,6 @@
 // PoE-USB-HID bridge, example firmware (Rev 4g, W55RP20)
 //
-// Main loop without RTOS: TinyUSB host, USB port supervision, Ethernet, USB stick log, status LED.
+// Main loop without RTOS: TinyUSB host, USB port supervision, Ethernet, status LED.
 // Debug output (printf) goes to SEGGER RTT, read it with J-Link RTT Viewer or probe-rs.
 #include <stdarg.h>
 #include <stdio.h>
@@ -13,7 +13,6 @@
 
 void app_emit(const char *s, size_t len) {
     net_queue(s, len);
-    msc_log_queue(s, len);
 }
 
 void app_eventf(const char *fmt, ...) {
@@ -30,11 +29,11 @@ size_t app_status(char *buf, size_t size) {
     static const char *const net_names[] = { "no W5500", "no link", "DHCP", "ready" };
     char ip[16];
     net_ip_string(ip, sizeof ip);
-    int n = snprintf(buf, size, "#STATUS up=%lus ip=%s host=%s net=%s usb=%s vbus=%.2fV stick=%s\n",
+    int n = snprintf(buf, size, "#STATUS up=%lus ip=%s host=%s net=%s usb=%s vbus=%.2fV\n",
                      (unsigned long)(to_ms_since_boot(get_absolute_time()) / 1000), ip, mdns_hostname(),
                      net_names[net_state()],
                      usb_port_fault() ? "fault" : usb_port_is_on() ? "on" : "off",
-                     usb_port_vbus(), msc_app_mounted() ? "logging" : "none");
+                     usb_port_vbus());
     return n < 0 ? 0 : ((size_t)n < size ? (size_t)n : size - 1);
 }
 
@@ -79,8 +78,8 @@ int main(void) {
         watchdog_update();
         tuh_task();
         usb_port_task();
+        valve_task();
         net_task();
-        msc_app_task();
         update_led();
         led_task();
     }
