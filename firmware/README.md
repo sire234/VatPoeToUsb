@@ -15,7 +15,7 @@ Beispiel und Ausgangspunkt für die eigentliche Firmware. Pico-SDK + **TinyUSB-H
 | mDNS / DNS-SD | Name **`poe-hid-xxxxxx.local`** (xxxxxx = letzte 3 MAC-Bytes, steht im RTT-Log und in `#STATUS`); Dienst `_poehid._tcp` „PoE-HID-Bridge xxxxxx“ auf Port 5000, TXT `txtvers=1`, `data=hid-ascii`. Ankündigung beim Start und bei IP-Wechsel |
 | USB-Port-Schutz | `USB_EN` (GPIO26) erst nach dem Start des Host-Stacks an. `VBUS_SENSE` (ADC3, Faktor 0,405) mit 1 kHz, gefiltert; < 4,1 V für 50 ms → Port aus, Neuversuch nach 1 → 2 → … → 32 s |
 | LED D11 (GPIO28) | an = Start · kurzer Blitz/s = kein Link · 4 Hz = DHCP · an (flackert bei HID-Daten) = bereit · 3 Blitze + Pause = USB-Überlast |
-| Debug | `printf` → **SEGGER RTT** über SWD (kein UART auf dem Board) |
+| Debug | `printf` → **SEGGER RTT** über SWD (kein UART auf dem Board) **und** in einen Ringpuffer (4 KB, mit Uptime), abrufbar über TCP: `log` → Verlauf als `#LOG <s> <text>` bis `#LOG end`; `debug on`/`debug off` → Live-Ausgabe `#DBG <s> <text>` (pro Verbindung, startet aus). Protokolliert u. a. mDNS-Anfragen (Absender, beantwortet/verworfen), TCP-Befehle, Ventil-Pakete (uid, Reports, Antwortzeit), USB-Port. `#STATUS` enthält `mdns=<empfangen>/<beantwortet>/<verworfen>`. `valve-scan --verbose` zeigt das alles an |
 | Watchdog | 3 s, pausiert während der Debugger den Kern anhält |
 
 Ausgabe am TCP-Client (Beispiel):

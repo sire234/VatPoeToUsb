@@ -40,6 +40,7 @@ target_compile_options(iolibrary PRIVATE -w)
 
 add_executable(poe_usb_hid_bridge
     src/main.c
+    src/debug_log.c
     src/led.c
     src/usb_port.c
     src/hid_app.c

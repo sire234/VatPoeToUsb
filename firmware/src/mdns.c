@@ -194,12 +194,38 @@ static void send_response(int answers, int additional) {
     n = put_u16(out, n, (uint16_t)count_bits(additional));
     n = put_records(out, n, answers);
     n = put_records(out, n, additional);
-    sendto(sock, out, (uint16_t)n, (uint8_t *)mdns_ip, MDNS_PORT);
+    int32_t r = sendto(sock, out, (uint16_t)n, (uint8_t *)mdns_ip, MDNS_PORT);
+    if (r != (int32_t)n)
+        printf("mDNS: send failed (%ld)\n", (long)r);
 }
 
 // ---- query handling ----
 
-static void handle_query(const uint8_t *msg, size_t len) {
+static uint32_t stat_rx, stat_answered, stat_legacy;
+
+static const char *type_name(uint16_t type) {
+    switch (type) {
+    case TYPE_A:   return "A";
+    case TYPE_PTR: return "PTR";
+    case TYPE_TXT: return "TXT";
+    case TYPE_SRV: return "SRV";
+    case TYPE_ANY: return "ANY";
+    default:       return "?";
+    }
+}
+
+void mdns_stats(uint32_t *rx, uint32_t *answered, uint32_t *legacy) {
+    *rx = stat_rx;
+    *answered = stat_answered;
+    *legacy = stat_legacy;
+}
+
+static void records_string(int mask, char *buf, size_t size) {
+    snprintf(buf, size, "%s%s%s%s%s", mask & R_PTR_SVC ? " PTR" : "", mask & R_PTR_ENUM ? " PTR(enum)" : "",
+             mask & R_SRV ? " SRV" : "", mask & R_TXT ? " TXT" : "", mask & R_A ? " A" : "");
+}
+
+static void handle_query(const uint8_t *msg, size_t len, const uint8_t *from, uint16_t port) {
     if (len < 12)
         return;
     uint16_t flags = (msg[2] << 8) | msg[3];
@@ -210,16 +236,20 @@ static void handle_query(const uint8_t *msg, size_t len) {
     int answers = 0, additional = 0;
     size_t off = 12;
     char name[128];
+    char asked[96] = "";                // our names that were asked for, for the debug log
+    size_t asked_len = 0;
 
     for (uint16_t q = 0; q < qdcount; q++) {
         if (!read_name(msg, len, &off, name, sizeof name) || off + 4 > len)
             return;
         uint16_t type = (msg[off] << 8) | msg[off + 1];
+        bool qu = msg[off + 2] & 0x80;
         uint16_t cls = ((msg[off + 2] << 8) | msg[off + 3]) & 0x7fff;   // without the QU bit
         off += 4;
         if (cls != CLASS_IN && cls != TYPE_ANY)
             continue;
         bool any = type == TYPE_ANY;
+        int before = answers;
 
         if (name_eq(name, host_name) && (type == TYPE_A || any)) {
             answers |= R_A;
@@ -236,10 +266,26 @@ static void handle_query(const uint8_t *msg, size_t len) {
             if (type == TYPE_TXT || any)
                 answers |= R_TXT;
         }
+        if (answers != before && asked_len < sizeof asked - 1)
+            asked_len += (size_t)snprintf(asked + asked_len, sizeof asked - asked_len, " %s %s%s",
+                                          type_name(type), name, qu ? " (QU)" : "");
+    }
+    if (!answers)
+        return;                         // query for other devices: counted only
+
+    char rec[48];
+    if (port != MDNS_PORT) {
+        // legacy unicast query (RFC 6762 6.7) would need a unicast reply with the query ID: not supported
+        stat_legacy++;
+        printf("mDNS: query from %u.%u.%u.%u:%u ignored (source port not 5353):%s\n",
+               from[0], from[1], from[2], from[3], port, asked);
+        return;
     }
     additional &= ~answers;
-    if (answers)
-        send_response(answers, additional);
+    records_string(answers, rec, sizeof rec);
+    printf("mDNS: query from %u.%u.%u.%u:%s -> answer%s\n", from[0], from[1], from[2], from[3], asked, rec);
+    stat_answered++;
+    send_response(answers, additional);
 }
 
 // ---- socket ----
@@ -284,12 +330,15 @@ void mdns_task(void) {
         uint8_t from[4];
         uint16_t port;
         int32_t len = recvfrom(sock, pkt, sizeof pkt, from, &port);
-        if (len > 0 && port == MDNS_PORT)
-            handle_query(pkt, (size_t)len);
+        if (len > 0) {
+            stat_rx++;
+            handle_query(pkt, (size_t)len, from, port);
+        }
     }
 
     uint32_t now = to_ms_since_boot(get_absolute_time());
     if (announce_left && (int32_t)(now - t_announce) >= 0) {
+        printf("mDNS: announcement (%d left)\n", announce_left - 1);
         send_response(R_A | R_PTR_SVC | R_SRV | R_TXT, 0);
         announce_left--;
         t_announce = now + 1000;

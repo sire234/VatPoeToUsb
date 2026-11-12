@@ -29,11 +29,13 @@ size_t app_status(char *buf, size_t size) {
     static const char *const net_names[] = { "no W5500", "no link", "DHCP", "ready" };
     char ip[16];
     net_ip_string(ip, sizeof ip);
-    int n = snprintf(buf, size, "#STATUS up=%lus ip=%s host=%s net=%s usb=%s vbus=%.2fV\n",
+    uint32_t m_rx, m_ans, m_legacy;
+    mdns_stats(&m_rx, &m_ans, &m_legacy);
+    int n = snprintf(buf, size, "#STATUS up=%lus ip=%s host=%s net=%s usb=%s vbus=%.2fV mdns=%lu/%lu/%lu\n",
                      (unsigned long)(to_ms_since_boot(get_absolute_time()) / 1000), ip, mdns_hostname(),
                      net_names[net_state()],
                      usb_port_fault() ? "fault" : usb_port_is_on() ? "on" : "off",
-                     usb_port_vbus());
+                     usb_port_vbus(), (unsigned long)m_rx, (unsigned long)m_ans, (unsigned long)m_legacy);
     return n < 0 ? 0 : ((size_t)n < size ? (size_t)n : size - 1);
 }
 
@@ -61,6 +63,7 @@ void tuh_umount_cb(uint8_t dev_addr) {
 
 int main(void) {
     stdio_init_all();
+    debug_log_init();                   // from here on every printf also goes to the TCP debug log
     led_init();
     printf("\nPoE-USB-HID bridge, example firmware (%s %s)\n", __DATE__, __TIME__);
     if (watchdog_caused_reboot())

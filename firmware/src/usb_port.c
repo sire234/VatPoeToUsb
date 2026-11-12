@@ -41,6 +41,7 @@ void usb_port_init(void) {
 }
 
 void usb_port_set(bool on) {
+    printf("USB: port %s (VBUS %.2f V)\n", on ? "on" : "off", vbus);
     gpio_put(BOARD_USB_EN_PIN, on);
     port_on = on;
     t_switched = now_ms();

@@ -12,6 +12,12 @@ void app_emit(const char *s, size_t len);
 void app_eventf(const char *fmt, ...) __attribute__((format(printf, 1, 2)));
 size_t app_status(char *buf, size_t size);
 
+// ---- debug_log.c: copy of every printf line (with uptime) in a ring buffer, readable over TCP ----
+void debug_log_init(void);
+uint32_t debug_log_oldest(void);
+uint32_t debug_log_newest(void);
+bool debug_log_read(uint32_t *cursor, char *buf, size_t size);
+
 // ---- led.c: status LED D11 ----
 typedef enum {
     LED_BOOT,       // on: starting
@@ -65,5 +71,6 @@ void mdns_stop(void);
 void mdns_announce(void);
 void mdns_task(void);
 const char *mdns_hostname(void);
+void mdns_stats(uint32_t *rx, uint32_t *answered, uint32_t *legacy);   // packets received / answered / ignored
 
 #endif

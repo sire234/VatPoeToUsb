@@ -49,6 +49,8 @@ static struct {
     uint8_t code;
     size_t expected;                    // payload bytes of the whole reply
     size_t received;
+    uint32_t t_sent;                    // for the debug log
+    unsigned reports;
 } req;
 
 static uint8_t reply[REPLY_MAX];
@@ -147,6 +149,8 @@ static void finish(void) {
     size_t n = req.received;
     while (n && (reply[n - 1] == '\r' || reply[n - 1] == '\n' || reply[n - 1] == 0))
         n--;
+    printf("VALVE: v%u << %u bytes in %u report(s), %lu ms\n", req.dev_addr, (unsigned)n, req.reports,
+           (unsigned long)(now_ms() - req.t_sent));
     char head[16];
     int h = snprintf(head, sizeof head, "#V%u ", req.dev_addr);
     if (!net_queue_fits((size_t)h + n + 1)) {
@@ -163,21 +167,27 @@ static void finish(void) {
 bool valve_report(uint8_t dev_addr, const uint8_t *r, uint16_t len) {
     if (!find(dev_addr))
         return false;
-    if (!req.busy || req.dev_addr != dev_addr || len < HEADER_LEN)
-        return true;                    // stale or unsolicited: ignore
-
+    if (!req.busy || req.dev_addr != dev_addr || len < HEADER_LEN) {
+        printf("VALVE: v%u unsolicited report ignored (%u bytes, code 0x%02X)\n", dev_addr, len, len > 4 ? r[4] : 0);
+        return true;
+    }
     if (!req.got_first) {
         uint16_t uid = r[0] | (r[1] << 8);
         uint16_t msg_len = r[2] | (r[3] << 8);
-        if (uid != req.uid)
+        if (uid != req.uid) {
+            printf("VALVE: v%u stale reply ignored (uid %u, expected %u)\n", dev_addr, uid, req.uid);
             return true;                // reply to an older request
+        }
+        req.reports++;
         req.code = r[4];
         if (req.code == CODE_ERROR) {
+            printf("VALVE: v%u packet error 0x%02X\n", dev_addr, len > HEADER_LEN ? r[HEADER_LEN] : 0);
             app_eventf("#V%u ERR packet error 0x%02X\n", dev_addr, len > HEADER_LEN ? r[HEADER_LEN] : 0);
             req.busy = false;
             return true;
         }
         if (req.code != CODE_TEXT || msg_len < HEADER_LEN || msg_len - HEADER_LEN > REPLY_MAX) {
+            printf("VALVE: v%u bad reply (code 0x%02X, length %u)\n", dev_addr, req.code, msg_len);
             app_eventf("#V%u ERR bad reply (code 0x%02X, length %u)\n", dev_addr, req.code, msg_len);
             req.busy = false;
             return true;
@@ -190,8 +200,11 @@ bool valve_report(uint8_t dev_addr, const uint8_t *r, uint16_t len) {
         memcpy(reply, r + HEADER_LEN, n);
         req.received = n;
     } else {
-        if (len < CONT_HEADER || r[4] != CODE_CONT)
+        if (len < CONT_HEADER || r[4] != CODE_CONT) {
+            printf("VALVE: v%u unexpected report in a long reply (code 0x%02X)\n", dev_addr, len > 4 ? r[4] : 0);
             return true;
+        }
+        req.reports++;
         size_t n = r[8] | (r[9] << 8);
         if (n > (size_t)(len - CONT_HEADER))
             n = len - CONT_HEADER;
@@ -215,10 +228,12 @@ void valve_request(uint8_t dev_addr, const char *cmd) {
         return;
     }
     if (!allowed(cmd)) {
+        printf("VALVE: v%u blocked \"%s\"\n", dev_addr, cmd);
         app_eventf("#V%u ERR blocked (only read commands and W1 are allowed)\n", dev_addr);
         return;
     }
     if (req.busy) {
+        printf("VALVE: v%u busy (request to v%u still open)\n", dev_addr, req.dev_addr);
         app_eventf("#V%u ERR busy\n", dev_addr);
         return;
     }
@@ -241,18 +256,23 @@ void valve_request(uint8_t dev_addr, const char *cmd) {
     out[HEADER_LEN + n] = '\r';
     out[HEADER_LEN + n + 1] = '\n';
 
+    const char *path = "interrupt OUT";
     bool ok = tuh_hid_send_report(dev_addr, v->idx, 0, out, sizeof out);
-    if (!ok)                            // no interrupt OUT endpoint: SET_REPORT over EP0
+    if (!ok) {                          // no interrupt OUT endpoint: SET_REPORT over EP0
+        path = "SET_REPORT";
         ok = tuh_hid_set_report(dev_addr, v->idx, 0, HID_REPORT_TYPE_OUTPUT, out, sizeof out);
+    }
     if (!ok) {
+        printf("VALVE: v%u send failed \"%s\"\n", dev_addr, cmd);
         app_eventf("#V%u ERR send failed\n", dev_addr);
         return;
     }
+    printf("VALVE: v%u >> %s (uid %u, %s)\n", dev_addr, cmd, uid, path);
     memset(&req, 0, sizeof req);
     req.busy = true;
     req.dev_addr = dev_addr;
     req.uid = uid;
-    req.t_start = now_ms();
+    req.t_start = req.t_sent = now_ms();
 }
 
 size_t valve_list(char *buf, size_t size) {
@@ -267,6 +287,8 @@ size_t valve_list(char *buf, size_t size) {
 
 void valve_task(void) {
     if (req.busy && now_ms() - req.t_start > TIMEOUT_MS) {
+        printf("VALVE: v%u timeout (uid %u, %u of %u bytes, %u report(s))\n", req.dev_addr, req.uid,
+               (unsigned)req.received, (unsigned)req.expected, req.reports);
         req.busy = false;
         app_eventf("#V%u ERR timeout\n", req.dev_addr);
     }

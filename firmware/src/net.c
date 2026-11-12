@@ -3,7 +3,9 @@
 // The TCP client receives everything app_emit() produces: plain ASCII from keyboards / barcode
 // scanners ("\r\n" after Enter) and '#'-prefixed lines for events, mice and other HID devices.
 // Commands from the client (one per line): "status", "usb on", "usb off", "valves",
-// "v<addr> <text command>" (VAT valve, e.g. "v1 p:0B0F10010000", reply "#V1 <reply>", see valve.c).
+// "v<addr> <text command>" (VAT valve, e.g. "v1 p:0B0F10010000", reply "#V1 <reply>", see valve.c),
+// "log" (debug history: "#LOG <uptime s> <text>" lines, then "#LOG end"),
+// "debug on" / "debug off" (live debug output "#DBG <uptime s> <text>", off on every new connection).
 // Test: nc <ip> 5000   (or PuTTY, connection type "Raw")
 #include <ctype.h>
 #include <stdio.h>
@@ -38,6 +40,11 @@ static char tx_buf[TX_BUF];             // ring buffer, filled by app_emit()
 static size_t tx_head, tx_tail;
 static char rx_line[96];
 static size_t rx_len;
+
+static bool debug_live;                 // "debug on": forward new log lines as "#DBG ..."
+static uint32_t debug_cursor;
+static bool log_dump;                   // "log": history being sent as "#LOG ..."
+static uint32_t log_cursor;
 
 static uint32_t now_ms(void) {
     return to_ms_since_boot(get_absolute_time());
@@ -102,11 +109,49 @@ static void use_static_ip(void) {
     ctlnetwork(CN_SET_NETINFO, &info);
 }
 
+// moves debug log lines into the TCP send buffer as far as they fit (history first, then live)
+static void forward_debug(void) {
+    char text[168], out[176];
+    while (log_dump || debug_live) {
+        uint32_t *cursor = log_dump ? &log_cursor : &debug_cursor;
+        uint32_t before = *cursor;
+        if (!debug_log_read(cursor, text, sizeof text)) {
+            if (!log_dump)
+                return;                 // live: nothing new
+            if (!net_queue_fits(9))
+                return;
+            net_queue("#LOG end\n", 9);
+            log_dump = false;
+            continue;
+        }
+        int n = snprintf(out, sizeof out, "%s %s\n", log_dump ? "#LOG" : "#DBG", text);
+        if (n <= 0 || !net_queue_fits((size_t)n)) {
+            *cursor = before;           // retry when there is room
+            return;
+        }
+        net_queue(out, (size_t)n);
+    }
+}
+
 static void handle_command(const char *cmd) {
     char reply[192];
     size_t n;
 
-    if (strcmp(cmd, "status") == 0) {
+    if (cmd[0])
+        printf("NET: command \"%s\"\n", cmd);
+
+    if (strcmp(cmd, "log") == 0) {
+        log_cursor = debug_log_oldest();
+        log_dump = true;
+        return;
+    } else if (strcmp(cmd, "debug on") == 0) {
+        debug_cursor = debug_log_newest();
+        debug_live = true;
+        n = snprintf(reply, sizeof reply, "#OK debug on\n");
+    } else if (strcmp(cmd, "debug off") == 0) {
+        debug_live = false;
+        n = snprintf(reply, sizeof reply, "#OK debug off\n");
+    } else if (strcmp(cmd, "status") == 0) {
         n = app_status(reply, sizeof reply);
     } else if (strcmp(cmd, "usb on") == 0) {
         usb_port_set(true);
@@ -128,7 +173,7 @@ static void handle_command(const char *cmd) {
             return;
         }
     } else if (cmd[0]) {
-        n = snprintf(reply, sizeof reply, "#ERR commands: status, usb on, usb off, valves, v<addr> <command>\n");
+        n = snprintf(reply, sizeof reply, "#ERR commands: status, usb on, usb off, valves, v<addr> <command>, log, debug on, debug off\n");
     } else {
         return;
     }
@@ -146,7 +191,9 @@ static void tcp_task(void) {
             client_connected = true;
             tx_head = tx_tail = 0;
             rx_len = 0;
-            char banner[128];
+            debug_live = false;
+            log_dump = false;
+            char banner[192];
             size_t n = app_status(banner, sizeof banner);
             net_queue(banner, n);
         }
@@ -166,6 +213,8 @@ static void tcp_task(void) {
                 }
             }
         }
+
+        forward_debug();
 
         // send what is contiguous in the ring buffer; send() blocks until the W5500 accepted it
         if (tx_tail != tx_head) {
