@@ -3,6 +3,8 @@
 Zweiteiliges, eckiges Gehäuse: **Wanne** (unten, mit Sockel und Kabelbinder-Tunneln) und **Deckel** (oben, rastet ein).
 Der RJ45-Stecker ragt oben ≈ 1,5 mm aus dem Deckel; alles andere ist verdeckt.
 Aufgebaut mit SolidCraft headless aus `make_script.py` → `poe_usb_gehaeuse_eckig.solidcraft`.
+Mit `make_script.py … --swd` entsteht die Variante mit seitlicher Aussparung für die SWD-Stiftleiste J3:
+[`../gehaeuse_eckig_rev1_swd`](../gehaeuse_eckig_rev1_swd/README.md).
 Koordinaten: x längs (0 = RJ45-Platinenkante), y = −(KiCad-y − 10), z = 0 an der PCB-Unterseite.
 
 ## Druckdateien für Bambu Lab A1

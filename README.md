@@ -41,7 +41,12 @@ PoeToUSB/
 │   └── status_led.py              B7
 ├── libs/poe_usb_hid_bridge.kicad_sym          Projekt-Symbole
 ├── footprints/poe_usb_hid_bridge.pretty/      Projekt-Footprints
-├── kicad/poe_usb_hid_bridge_rev4g/            KiCad-10-Projekt (Schaltplan mit Leitungen + Board); Rev 4e/4f bleiben daneben
+├── kicad/poe_usb_hid_bridge_rev4g/            KiCad-10-Projekt (Schaltplan mit Leitungen + Board); ältere Revisionen nur noch in der Git-Historie
+├── mechanical/
+│   ├── gehaeuse_eckig_rev1/                   eckiges Gehäuse (Wanne + Deckel), make_script.py = Quelle beider Varianten
+│   └── gehaeuse_eckig_rev1_swd/               dito mit seitlicher Aussparung für die SWD-Stiftleiste J3 (--swd)
+├── firmware/                                  Pico-SDK-Firmware (TinyUSB-Host, W5500, mDNS, Ventile), blinky/, hwtest/
+├── tools/valve-scan/                          .NET-Tool: Bridges per mDNS finden, Ventile lesen, Dauertest
 └── outputs/
     ├── poe_usb_hid_bridge_rev4g.net           Netzliste
     ├── poe_usb_hid_bridge_rev4g_bom.xml       BOM (SKiDL-XML)

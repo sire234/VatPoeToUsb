@@ -25,3 +25,6 @@ firmware/build-tusbdebug/
 tools/valve-scan/bin/
 tools/valve-scan/obj/
 tools/valve-scan/publish/
+
+# SolidCraft writes a backup when a design is overwritten
+*.solidcraft.bak

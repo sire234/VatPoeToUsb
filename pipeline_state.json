@@ -393,7 +393,7 @@
   },
   "schematic_tools": {
     "tools/schgen.py": "redraw sheets with wires, keeps symbol UUIDs (PCB link)",
-    "tools/sheet_*.py": "per-sheet layout scripts (source rev4e -> target project)",
+    "tools/sheet_*.py": "per-sheet layout scripts (source rev4e -> target project); kicad/..._rev4e/_rev4f/_rev4b removed from the tree 2026-11-12, restore the label-only source with: git checkout 7d40123 -- kicad/poe_usb_hid_bridge_rev4e",
     "tools/netcompare.py": "KiCad netlist vs SKiDL connectivity",
     "tools/check_sheet.sh": "per-sheet netcompare + ERC",
     "tools/sch_preview.py": "render one sheet page to PNG",
