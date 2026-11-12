@@ -29,37 +29,77 @@ public static class Mdns
         var interfaces = LocalIPv4Addresses();
         foreach (var local in interfaces)
         {
-            try { socket.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(Group, local)); }
-            catch (SocketException) { /* interface without multicast */ }
-        }
-
-        byte[] query = BuildQuery(ServiceType, TypePtr);
-        foreach (var local in interfaces)
-        {
             try
             {
-                socket.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.MulticastInterface, local.GetAddressBytes());
-                socket.SendTo(query, new IPEndPoint(Group, Port));
+                socket.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(Group, local));
+                Log.Debug($"mDNS: joined 224.0.0.251 on {local}");
             }
-            catch (SocketException) { /* ignore interfaces that cannot send */ }
+            catch (SocketException e)
+            {
+                Log.Debug($"mDNS: cannot join on {local}: {e.Message}");
+            }
+        }
+
+        void SendQuery(string name, ushort type)
+        {
+            byte[] query = BuildQuery(name, type);
+            foreach (var local in interfaces)
+            {
+                try
+                {
+                    socket.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.MulticastInterface, local.GetAddressBytes());
+                    socket.SendTo(query, new IPEndPoint(Group, Port));
+                    Log.Debug($"mDNS: query {TypeName(type)} {name} via {local}");
+                }
+                catch (SocketException e)
+                {
+                    Log.Debug($"mDNS: query {TypeName(type)} {name} via {local} failed: {e.Message}");
+                }
+            }
         }
 
         var instances = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var srv = new Dictionary<string, (string Host, int Port)>(StringComparer.OrdinalIgnoreCase);
         var hosts = new Dictionary<string, IPAddress>(StringComparer.OrdinalIgnoreCase);
 
+        // multicast over WLAN loses packets (power save, AP buffering), so the query is repeated
+        // (RFC 6762 5.2: increasing intervals); missing SRV/A records are asked for explicitly
+        var start = DateTime.UtcNow;
+        var end = start + duration;
+        var repeats = new Queue<TimeSpan>(new[] { 0.0, 0.5, 1.0, 2.0 }.Select(TimeSpan.FromSeconds));
         var buffer = new byte[9000];
-        var end = DateTime.UtcNow + duration;
         while (DateTime.UtcNow < end)
         {
-            int waitUs = (int)Math.Max(1, (end - DateTime.UtcNow).TotalMilliseconds) * 1000;
+            if (repeats.Count > 0 && DateTime.UtcNow - start >= repeats.Peek())
+            {
+                repeats.Dequeue();
+                SendQuery(ServiceType, TypePtr);
+                foreach (var instance in instances.Where(i => !srv.ContainsKey(i)))
+                    SendQuery(instance, TypeSrv);
+                foreach (var host in srv.Values.Select(s => s.Host).Where(h => !hosts.ContainsKey(h)).Distinct())
+                    SendQuery(host, TypeA);
+            }
+
+            var next = repeats.Count > 0 ? start + repeats.Peek() : end;
+            int waitUs = (int)Math.Max(1, (Min(next, end) - DateTime.UtcNow).TotalMilliseconds) * 1000;
             if (!socket.Poll(waitUs, SelectMode.SelectRead))
-                break;
+                continue;
             EndPoint from = new IPEndPoint(IPAddress.Any, 0);
-            int n = socket.ReceiveFrom(buffer, ref from);
-            try { ParseResponse(buffer.AsSpan(0, n).ToArray(), instances, srv, hosts); }
-            catch (Exception) { /* malformed packet of some other device: ignore */ }
+            int n;
+            try
+            {
+                n = socket.ReceiveFrom(buffer, ref from);
+            }
+            catch (SocketException e)
+            {
+                // Windows reports e.g. an ICMP "port unreachable" of an earlier send here: skip it
+                Log.Debug($"mDNS: receive error {e.SocketErrorCode}, ignored");
+                continue;
+            }
+            try { ParseResponse(buffer.AsSpan(0, n).ToArray(), instances, srv, hosts, from); }
+            catch (Exception e) { Log.Debug($"mDNS: {n} bytes from {from} not parsed: {e.Message}"); }
         }
+        Log.Debug($"mDNS: done, {instances.Count} instance(s), {srv.Count} SRV, {hosts.Count} A record(s)");
 
         var result = new List<BridgeInfo>();
         foreach (var instance in instances)
@@ -95,10 +135,10 @@ public static class Mdns
     }
 
     private static void ParseResponse(byte[] msg, HashSet<string> instances,
-        Dictionary<string, (string, int)> srv, Dictionary<string, IPAddress> hosts)
+        Dictionary<string, (string, int)> srv, Dictionary<string, IPAddress> hosts, EndPoint from)
     {
         if (msg.Length < 12 || (msg[2] & 0x80) == 0)
-            return;                                     // not a response
+            return;                                     // not a response (e.g. our own or other queries)
         int qd = U16(msg, 4), records = U16(msg, 6) + U16(msg, 8) + U16(msg, 10);
         int off = 12;
         for (int i = 0; i < qd; i++)
@@ -117,19 +157,28 @@ public static class Mdns
             if (type == TypePtr && name.Equals(ServiceType, StringComparison.OrdinalIgnoreCase))
             {
                 int p = rdata;
-                instances.Add(ReadName(msg, ref p));
+                string instance = ReadName(msg, ref p);
+                instances.Add(instance);
+                Log.Debug($"mDNS: from {from}: PTR {name} -> {instance}");
             }
             else if (type == TypeSrv)
             {
                 int p = rdata + 6;                      // priority, weight, port
                 srv[name] = (ReadName(msg, ref p), U16(msg, rdata + 4));
+                Log.Debug($"mDNS: from {from}: SRV {name} -> {srv[name].Item1}:{srv[name].Item2}");
             }
             else if (type == TypeA && rdlen == 4)
             {
                 hosts[name] = new IPAddress(msg.AsSpan(rdata, 4));
+                Log.Debug($"mDNS: from {from}: A {name} -> {hosts[name]}");
             }
         }
     }
+
+    private static DateTime Min(DateTime a, DateTime b) => a < b ? a : b;
+
+    private static string TypeName(ushort type) =>
+        type switch { TypeA => "A", TypePtr => "PTR", TypeSrv => "SRV", _ => type.ToString() };
 
     private static ushort U16(byte[] b, int o) => (ushort)((b[o] << 8) | b[o + 1]);
 
