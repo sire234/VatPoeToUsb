@@ -34,6 +34,14 @@ static net_state_t state = NET_NO_CHIP;
 static bool using_dhcp;
 static uint8_t dhcp_buf[1024];
 static uint32_t t_dhcp_start, t_dhcp_tick, t_link_check;
+
+// Without a link, the PHY is reset every LINK_RETRY_MS: at PoE power-up the supply rises in steps and
+// the W5500 PHY sometimes never starts auto-negotiation. Every LINK_FULL_RESET-th attempt resets the
+// whole chip (hardware reset line) instead.
+#define LINK_RETRY_MS   5000
+#define LINK_FULL_RESET 3
+static uint32_t t_no_link;              // since when there has been no link
+static uint32_t link_retries;           // PHY resets since the link was lost
 static bool client_connected;
 
 static char tx_buf[TX_BUF];             // ring buffer, filled by app_emit()
@@ -260,7 +268,24 @@ void net_task(void) {
             mdns_stop();
             client_connected = false;
             state = NET_NO_LINK;
+            t_no_link = now;
+            link_retries = 0;
+        } else if (!link && now - t_no_link >= LINK_RETRY_MS) {
+            t_no_link = now;
+            link_retries++;
+            if (link_retries % LINK_FULL_RESET == 0) {
+                printf("NET: no link, chip reset (attempt %lu)\n", (unsigned long)link_retries);
+                net_init();             // hardware reset, buffers and MAC again
+                if (state == NET_NO_CHIP)
+                    return;
+            } else {
+                printf("NET: no link, PHY reset (attempt %lu)\n", (unsigned long)link_retries);
+                wizphy_reset();
+            }
         } else if (link && state == NET_NO_LINK) {
+            if (link_retries)
+                printf("NET: link up after %lu reset(s)\n", (unsigned long)link_retries);
+            link_retries = 0;
             printf("NET: link up, DHCP ...\n");
             DHCP_init(SOCK_DHCP, dhcp_buf);
             using_dhcp = true;
