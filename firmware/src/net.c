@@ -169,19 +169,28 @@ static void handle_command(const char *cmd) {
         n = snprintf(reply, sizeof reply, "#OK usb off\n");
     } else if (strcmp(cmd, "valves") == 0) {
         n = valve_list(reply, sizeof reply);
-    } else if (cmd[0] == 'v' && isdigit((unsigned char)cmd[1])) {
+    } else if ((cmd[0] == 'v' || cmd[0] == 't') && isdigit((unsigned char)cmd[1])) {
         char *rest;
         unsigned long addr = strtoul(cmd + 1, &rest, 10);
         if (*rest != ' ' || addr > 255) {
-            n = snprintf(reply, sizeof reply, "#ERR usage: v<addr> <command>, e.g. v1 p:0B0F10010000\n");
+            n = snprintf(reply, sizeof reply, "#ERR usage: v<addr> <command> or t<addr> <command>, e.g. v1 p:0B0F10010000\n");
         } else {
             while (*rest == ' ')
                 rest++;
-            valve_request((uint8_t)addr, rest);
+            valve_request((uint8_t)addr, cmd[0] == 't' ? 'T' : 'V', rest);
+            return;
+        }
+    } else if (cmd[0] == 'c' && isdigit((unsigned char)cmd[1])) {
+        char *rest;
+        unsigned long addr = strtoul(cmd + 1, &rest, 10);
+        if (*rest != 0 || addr > 255) {
+            n = snprintf(reply, sizeof reply, "#ERR usage: c<addr>, e.g. c1\n");
+        } else {
+            valve_request((uint8_t)addr, 'C', "");
             return;
         }
     } else if (cmd[0]) {
-        n = snprintf(reply, sizeof reply, "#ERR commands: status, usb on, usb off, valves, v<addr> <command>, log, debug on, debug off\n");
+        n = snprintf(reply, sizeof reply, "#ERR commands: status, usb on, usb off, valves, v<addr> <command>, t<addr> <command>, c<addr>, log, debug on, debug off\n");
     } else {
         return;
     }

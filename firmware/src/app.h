@@ -47,7 +47,7 @@ bool valve_is_valve(uint8_t dev_addr);
 void valve_mount(uint8_t dev_addr, uint8_t idx);
 void valve_unmount(uint8_t dev_addr);
 bool valve_report(uint8_t dev_addr, const uint8_t *report, uint16_t len);
-void valve_request(uint8_t dev_addr, const char *cmd);   // reply: "#V<addr> <text>" via app_emit
+void valve_request(uint8_t dev_addr, char kind, const char *cmd);   // kind 'V', 'T' or 'C', see valve.c
 size_t valve_list(char *buf, size_t size);
 void valve_task(void);
 

@@ -11,7 +11,15 @@
 //
 // Only read commands are passed on (allow-list as in cpa4showcase src/valve-commands.md):
 //   p:<read service><ID 8 hex><index 2 hex>, g:1E17/18/19 and g:1E20/21[<ID>] (+ "START"),
-//   and exactly the two W1 writes that set the number format to hex.
+//   exactly the two W1 writes that set the number format to hex, the W2 write
+//   "deliver bitmap strings" (0x06102000 = 0 or 1) and the acknowledge of the three change
+//   counters 0x06100100/0200/0300 (index 0) - the same writes the cpa4showcase gate allows.
+//
+// Three request kinds (prefix of the TCP reply):
+//   'V'  v<addr> <cmd>  -> "#V<addr> <reply>"                   (text, as before)
+//   'T'  t<addr> <cmd>  -> "#T<addr> <tick 4 hex> <reply>"      (text + valve tick of the reply)
+//   'C'  c<addr>        -> "#C<addr> <tick 4 hex> <type 4 hex>" (controller type, message 0x16)
+// Errors are always "#<kind><addr> ERR <reason>".
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -25,6 +33,7 @@
 #define REPORT_LEN      64
 #define HEADER_LEN      8
 #define CODE_TEXT       0x15
+#define CODE_CTYPE      0x16
 #define CODE_ERROR      0x80
 #define CODE_CONT       0x7A
 #define FIRST_PAYLOAD   (REPORT_LEN - HEADER_LEN)       // 56
@@ -42,6 +51,9 @@ static valve_t valves[VALVE_MAX];
 // one request at a time (over all valves)
 static struct {
     bool busy;
+    char kind;                          // 'V', 'T' or 'C', see the header
+    uint8_t want_code;                  // CODE_TEXT or CODE_CTYPE
+    uint16_t tick;                      // timestamp of the first reply report
     uint8_t dev_addr;
     uint16_t uid;
     uint32_t t_start;
@@ -82,6 +94,22 @@ static bool allowed(const char *cmd) {
     // the only writes: W1, number formats integer and float to hex
     if (strcmp(cmd, "p:01060201010003") == 0 || strcmp(cmd, "p:01060201020002") == 0)
         return true;
+
+    // W2 and the change counter acknowledges: p:01 + ID (8) + index 00 + value (1..16 hex)
+    if (strncmp(cmd, "p:01", 4) == 0 && n > 14 && n <= 30 && all_hex(cmd + 4, n - 4)) {
+        if (strncmp(cmd + 12, "00", 2) != 0)
+            return false;
+        if (strncasecmp(cmd + 4, "06100100", 8) == 0 || strncasecmp(cmd + 4, "06100200", 8) == 0 ||
+            strncasecmp(cmd + 4, "06100300", 8) == 0)
+            return true;
+        if (strncasecmp(cmd + 4, "06102000", 8) == 0) {
+            for (size_t i = 14; i < n - 1; i++)     // value 0 or 1, leading zeros allowed
+                if (cmd[i] != '0')
+                    return false;
+            return cmd[n - 1] == '0' || cmd[n - 1] == '1';
+        }
+        return false;
+    }
 
     if (strncmp(cmd, "p:", 2) == 0) {
         // p: + service (2) + parameter ID (8) + index (2), nothing else
@@ -138,7 +166,7 @@ void valve_unmount(uint8_t dev_addr) {
     v->dev_addr = 0;
     if (req.busy && req.dev_addr == dev_addr) {
         req.busy = false;
-        app_eventf("#V%u ERR removed\n", dev_addr);
+        app_eventf("#%c%u ERR removed\n", req.kind, dev_addr);
     }
     printf("VALVE: addr %u removed\n", dev_addr);
     app_eventf("#VALVE disconnected v%u\n", dev_addr);
@@ -151,10 +179,21 @@ static void finish(void) {
         n--;
     printf("VALVE: v%u << %u bytes in %u report(s), %lu ms\n", req.dev_addr, (unsigned)n, req.reports,
            (unsigned long)(now_ms() - req.t_sent));
-    char head[16];
-    int h = snprintf(head, sizeof head, "#V%u ", req.dev_addr);
+    if (req.kind == 'C') {
+        // controller type: 2 bytes little endian
+        unsigned type = req.received >= 2 ? (unsigned)(reply[0] | (reply[1] << 8)) : 0;
+        app_eventf("#C%u %04X %04X\n", req.dev_addr, req.tick, type);
+        req.busy = false;
+        return;
+    }
+    char head[24];
+    int h;
+    if (req.kind == 'T')
+        h = snprintf(head, sizeof head, "#T%u %04X ", req.dev_addr, req.tick);
+    else
+        h = snprintf(head, sizeof head, "#V%u ", req.dev_addr);
     if (!net_queue_fits((size_t)h + n + 1)) {
-        app_eventf("#V%u ERR reply too long for the TCP buffer (%u bytes)\n", req.dev_addr, (unsigned)n);
+        app_eventf("#%c%u ERR reply too long for the TCP buffer (%u bytes)\n", req.kind, req.dev_addr, (unsigned)n);
     } else {
         net_queue(head, (size_t)h);
         net_queue((const char *)reply, n);
@@ -182,17 +221,18 @@ bool valve_report(uint8_t dev_addr, const uint8_t *r, uint16_t len) {
         req.code = r[4];
         if (req.code == CODE_ERROR) {
             printf("VALVE: v%u packet error 0x%02X\n", dev_addr, len > HEADER_LEN ? r[HEADER_LEN] : 0);
-            app_eventf("#V%u ERR packet error 0x%02X\n", dev_addr, len > HEADER_LEN ? r[HEADER_LEN] : 0);
+            app_eventf("#%c%u ERR packet error 0x%02X\n", req.kind, dev_addr, len > HEADER_LEN ? r[HEADER_LEN] : 0);
             req.busy = false;
             return true;
         }
-        if (req.code != CODE_TEXT || msg_len < HEADER_LEN || msg_len - HEADER_LEN > REPLY_MAX) {
+        if (req.code != req.want_code || msg_len < HEADER_LEN || msg_len - HEADER_LEN > REPLY_MAX) {
             printf("VALVE: v%u bad reply (code 0x%02X, length %u)\n", dev_addr, req.code, msg_len);
-            app_eventf("#V%u ERR bad reply (code 0x%02X, length %u)\n", dev_addr, req.code, msg_len);
+            app_eventf("#%c%u ERR bad reply (code 0x%02X, length %u)\n", req.kind, dev_addr, req.code, msg_len);
             req.busy = false;
             return true;
         }
         req.got_first = true;
+        req.tick = r[5] | (r[6] << 8);
         req.expected = msg_len - HEADER_LEN;
         size_t n = req.expected < FIRST_PAYLOAD ? req.expected : FIRST_PAYLOAD;
         if (n > (size_t)(len - HEADER_LEN))
@@ -221,40 +261,44 @@ bool valve_report(uint8_t dev_addr, const uint8_t *r, uint16_t len) {
 
 // ---------------------------------------------------------------- requests (from net.c)
 
-void valve_request(uint8_t dev_addr, const char *cmd) {
+void valve_request(uint8_t dev_addr, char kind, const char *cmd) {
     valve_t *v = find(dev_addr);
+    if (kind == 'C')
+        cmd = "";                       // message 0x16 has no payload
     if (dev_addr == 0 || !v) {
-        app_eventf("#V%u ERR no valve\n", dev_addr);
+        app_eventf("#%c%u ERR no valve\n", kind, dev_addr);
         return;
     }
-    if (!allowed(cmd)) {
+    if (kind != 'C' && !allowed(cmd)) {
         printf("VALVE: v%u blocked \"%s\"\n", dev_addr, cmd);
-        app_eventf("#V%u ERR blocked (only read commands and W1 are allowed)\n", dev_addr);
+        app_eventf("#%c%u ERR blocked (only read commands, W1, W2 and counter acknowledges are allowed)\n", kind, dev_addr);
         return;
     }
     if (req.busy) {
         printf("VALVE: v%u busy (request to v%u still open)\n", dev_addr, req.dev_addr);
-        app_eventf("#V%u ERR busy\n", dev_addr);
+        app_eventf("#%c%u ERR busy\n", kind, dev_addr);
         return;
     }
     size_t n = strlen(cmd);
     if (n + 2 > FIRST_PAYLOAD) {
-        app_eventf("#V%u ERR command too long\n", dev_addr);
+        app_eventf("#%c%u ERR command too long\n", kind, dev_addr);
         return;
     }
 
     static uint8_t out[REPORT_LEN];
     memset(out, 0, sizeof out);
     uint16_t uid = next_uid++;
-    uint16_t msg_len = (uint16_t)(HEADER_LEN + n + 2);
+    uint16_t msg_len = (uint16_t)(kind == 'C' ? HEADER_LEN : HEADER_LEN + n + 2);
     out[0] = uid & 0xff;
     out[1] = uid >> 8;
     out[2] = msg_len & 0xff;
     out[3] = msg_len >> 8;
-    out[4] = CODE_TEXT;
-    memcpy(out + HEADER_LEN, cmd, n);
-    out[HEADER_LEN + n] = '\r';
-    out[HEADER_LEN + n + 1] = '\n';
+    out[4] = kind == 'C' ? CODE_CTYPE : CODE_TEXT;
+    if (kind != 'C') {
+        memcpy(out + HEADER_LEN, cmd, n);
+        out[HEADER_LEN + n] = '\r';
+        out[HEADER_LEN + n + 1] = '\n';
+    }
 
     const char *path = "interrupt OUT";
     bool ok = tuh_hid_send_report(dev_addr, v->idx, 0, out, sizeof out);
@@ -264,12 +308,14 @@ void valve_request(uint8_t dev_addr, const char *cmd) {
     }
     if (!ok) {
         printf("VALVE: v%u send failed \"%s\"\n", dev_addr, cmd);
-        app_eventf("#V%u ERR send failed\n", dev_addr);
+        app_eventf("#%c%u ERR send failed\n", kind, dev_addr);
         return;
     }
-    printf("VALVE: v%u >> %s (uid %u, %s)\n", dev_addr, cmd, uid, path);
+    printf("VALVE: v%u >> %s (uid %u, %s)\n", dev_addr, kind == 'C' ? "controller type" : cmd, uid, path);
     memset(&req, 0, sizeof req);
     req.busy = true;
+    req.kind = kind;
+    req.want_code = kind == 'C' ? CODE_CTYPE : CODE_TEXT;
     req.dev_addr = dev_addr;
     req.uid = uid;
     req.t_start = req.t_sent = now_ms();
@@ -290,6 +336,6 @@ void valve_task(void) {
         printf("VALVE: v%u timeout (uid %u, %u of %u bytes, %u report(s))\n", req.dev_addr, req.uid,
                (unsigned)req.received, (unsigned)req.expected, req.reports);
         req.busy = false;
-        app_eventf("#V%u ERR timeout\n", req.dev_addr);
+        app_eventf("#%c%u ERR timeout\n", req.kind, req.dev_addr);
     }
 }
