@@ -61,7 +61,7 @@ static struct {
     uint8_t code;
     size_t expected;                    // payload bytes of the whole reply
     size_t received;
-    uint32_t t_sent;                    // for the debug log
+    uint32_t t_sent;                    // us, for the debug log
     unsigned reports;
 } req;
 
@@ -177,29 +177,30 @@ static void finish(void) {
     size_t n = req.received;
     while (n && (reply[n - 1] == '\r' || reply[n - 1] == '\n' || reply[n - 1] == 0))
         n--;
-    printf("VALVE: v%u << %u bytes in %u report(s), %lu ms\n", req.dev_addr, (unsigned)n, req.reports,
-           (unsigned long)(now_ms() - req.t_sent));
+    uint32_t us = time_us_32() - req.t_sent;
     if (req.kind == 'C') {
         // controller type: 2 bytes little endian
         unsigned type = req.received >= 2 ? (unsigned)(reply[0] | (reply[1] << 8)) : 0;
         app_eventf("#C%u %04X %04X\n", req.dev_addr, req.tick, type);
-        req.busy = false;
-        return;
-    }
-    char head[24];
-    int h;
-    if (req.kind == 'T')
-        h = snprintf(head, sizeof head, "#T%u %04X ", req.dev_addr, req.tick);
-    else
-        h = snprintf(head, sizeof head, "#V%u ", req.dev_addr);
-    if (!net_queue_fits((size_t)h + n + 1)) {
-        app_eventf("#%c%u ERR reply too long for the TCP buffer (%u bytes)\n", req.kind, req.dev_addr, (unsigned)n);
     } else {
-        net_queue(head, (size_t)h);
-        net_queue((const char *)reply, n);
-        net_queue("\n", 1);
+        char head[24];
+        int h;
+        if (req.kind == 'T')
+            h = snprintf(head, sizeof head, "#T%u %04X ", req.dev_addr, req.tick);
+        else
+            h = snprintf(head, sizeof head, "#V%u ", req.dev_addr);
+        if (!net_queue_fits((size_t)h + n + 1)) {
+            app_eventf("#%c%u ERR reply too long for the TCP buffer (%u bytes)\n", req.kind, req.dev_addr, (unsigned)n);
+        } else {
+            net_queue(head, (size_t)h);
+            net_queue((const char *)reply, n);
+            net_queue("\n", 1);
+        }
     }
     req.busy = false;
+    // logged after the reply is queued (a printf takes about 60 us)
+    printf("VALVE: v%u << %u bytes in %u report(s), %lu.%lu ms\n", req.dev_addr, (unsigned)n, req.reports,
+           (unsigned long)(us / 1000), (unsigned long)(us % 1000 / 100));
 }
 
 // returns true if the report belonged to a valve (then it is not shown as generic HID)
@@ -266,6 +267,7 @@ void valve_request(uint8_t dev_addr, char kind, const char *cmd) {
     if (kind == 'C')
         cmd = "";                       // message 0x16 has no payload
     if (dev_addr == 0 || !v) {
+        printf("VALVE: v%u no valve \"%s\"\n", dev_addr, cmd);
         app_eventf("#%c%u ERR no valve\n", kind, dev_addr);
         return;
     }
@@ -281,6 +283,7 @@ void valve_request(uint8_t dev_addr, char kind, const char *cmd) {
     }
     size_t n = strlen(cmd);
     if (n + 2 > FIRST_PAYLOAD) {
+        printf("VALVE: v%u command too long (%u characters)\n", dev_addr, (unsigned)n);
         app_eventf("#%c%u ERR command too long\n", kind, dev_addr);
         return;
     }
@@ -300,6 +303,8 @@ void valve_request(uint8_t dev_addr, char kind, const char *cmd) {
         out[HEADER_LEN + n + 1] = '\n';
     }
 
+    // Interrupt OUT goes out in the next USB frame (up to 1 ms). SET_REPORT over EP0 would go out at
+    // once, but the valve stalls it (tested), so it is only the fallback without an OUT endpoint.
     const char *path = "interrupt OUT";
     bool ok = tuh_hid_send_report(dev_addr, v->idx, 0, out, sizeof out);
     if (!ok) {                          // no interrupt OUT endpoint: SET_REPORT over EP0
@@ -311,14 +316,15 @@ void valve_request(uint8_t dev_addr, char kind, const char *cmd) {
         app_eventf("#%c%u ERR send failed\n", kind, dev_addr);
         return;
     }
-    printf("VALVE: v%u >> %s (uid %u, %s)\n", dev_addr, kind == 'C' ? "controller type" : cmd, uid, path);
     memset(&req, 0, sizeof req);
     req.busy = true;
     req.kind = kind;
     req.want_code = kind == 'C' ? CODE_CTYPE : CODE_TEXT;
     req.dev_addr = dev_addr;
     req.uid = uid;
-    req.t_start = req.t_sent = now_ms();
+    req.t_start = now_ms();
+    req.t_sent = time_us_32();
+    printf("VALVE: v%u >> %s (uid %u, %s)\n", dev_addr, kind == 'C' ? "controller type" : cmd, uid, path);
 }
 
 size_t valve_list(char *buf, size_t size) {

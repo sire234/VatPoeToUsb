@@ -12,7 +12,7 @@ Beispiel und Ausgangspunkt für die eigentliche Firmware. Pico-SDK + **TinyUSB-H
 | Maus / andere HID | Zeilen `#MOUSE b=… x=… y=… w=…` bzw. `#HID <addr>.<itf>: <hex>` |
 | VAT-Ventile (`272b:0010`) | Textbefehle über die herstellerspezifische HID-Schnittstelle (Protokoll: `cpa4showcase/docs/analysis/legacy-analysis.md` 9.1, Befehle: `src/valve-commands.md`). TCP: `valves` → `#VALVES v1 v2`; `v<addr> <befehl>` → `#V<addr> <antwort>`, z. B. `v1 p:0B0F10030200` → `#V1 p:000B0F10030200TEST-F01…`. Lange Antworten (`g:1E18` usw., mehrere Reports mit Code `0x7A`) werden zusammengesetzt; mehrteilige `g:`-Befehle ruft der Client selbst auf (`…START`, dann ohne `START` bis RS `EnD` RS). **Nur Lesebefehle** (`p:0B/0E/0F/10/12/15/17/1A/1B/29`, `g:1E17…1E21`), die zwei W1-Schreibbefehle, W2 (`0x06102000` = 0/1) und die Quittung der Änderungszähler `0x06100100/0200/0300` (Index 0) – dieselben Schreibbefehle, die das Gate der cpa4showcase erlaubt; alles andere → `#V1 ERR blocked`. Für die cpa4showcase zusätzlich: `t<addr> <befehl>` → `#T<addr> <tick> <antwort>` (Tick = Zeitstempel des Ventils, 4 Hex-Ziffern) und `c<addr>` → `#C<addr> <tick> <controller-typ>` (USB-Nachricht 0x16). Weitere Fehler: `ERR timeout` (1 s), `ERR busy`, `ERR no valve`. Das CD-ROM der Ventile wird nicht eingebunden |
 | Ethernet | DHCP (15 s), sonst fest **192.168.1.200/24**. **TCP-Server Port 5000**: liefert die HID-Daten, nimmt Befehle `status`, `usb on`, `usb off`, `valves`, `v<addr> <befehl>`, `t<addr> <befehl>`, `c<addr>` an |
-| mDNS / DNS-SD | Name **`poe-hid-xxxxxx.local`** (xxxxxx = letzte 3 MAC-Bytes, steht im RTT-Log und in `#STATUS`); Dienst `_poehid._tcp` „PoE-HID-Bridge xxxxxx“ auf Port 5000, TXT `txtvers=1`, `data=hid-ascii`. Ankündigung beim Start und bei IP-Wechsel |
+| mDNS / DNS-SD | Name **`poe-hid-xxxxxx.local`** (xxxxxx = letzte 3 MAC-Bytes, steht im RTT-Log und in `#STATUS`; MAC `02:…` = Hash über die volle 128-Bit-UID des Flash, weil die ersten 64 Bit beim Puya P25Q16 im W55RP20 nur Los-Code sind und auf vielen Boards gleich); Dienst `_poehid._tcp` „PoE-HID-Bridge xxxxxx“ auf Port 5000, TXT `txtvers=1`, `data=hid-ascii`. Ankündigung beim Start und bei IP-Wechsel |
 | USB-Port-Schutz | `USB_EN` (GPIO26) erst nach dem Start des Host-Stacks an. `VBUS_SENSE` (ADC3, Faktor 0,405) mit 1 kHz, gefiltert; < 4,1 V für 50 ms → Port aus, Neuversuch nach 1 → 2 → … → 32 s |
 | LED D11 (GPIO28) | an = Start · kurzer Blitz/s = kein Link · 4 Hz = DHCP · an (flackert bei HID-Daten) = bereit · 3 Blitze + Pause = USB-Überlast |
 | Debug | `printf` → **SEGGER RTT** über SWD (kein UART auf dem Board) **und** in einen Ringpuffer (4 KB, mit Uptime), abrufbar über TCP: `log` → Verlauf als `#LOG <s> <text>` bis `#LOG end`; `debug on`/`debug off` → Live-Ausgabe `#DBG <s> <text>` (pro Verbindung, startet aus). Protokolliert u. a. mDNS-Anfragen (Absender, beantwortet/verworfen), TCP-Befehle, Ventil-Pakete (uid, Reports, Antwortzeit), USB-Port. `#STATUS` enthält `mdns=<empfangen>/<beantwortet>/<verworfen>`. `valve-scan --verbose` zeigt das alles an |
@@ -52,7 +52,8 @@ cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DPICO_SDK_PATH=C:/Users
 cmake --build build
 ```
 Ohne Internet: ioLibrary lokal angeben mit `-DIOLIBRARY_PATH=C:/Users/simon/tools/ioLibrary_Driver-3.2.0`.
-Ergebnis: `build/poe_usb_hid_bridge.elf` (≈ 80 KB Flash, 15,5 KB RAM) und `.bin`. Kein UF2, da es keinen BOOTSEL-Weg gibt.
+Ergebnis: `build/poe_usb_hid_bridge.elf` (≈ 69 KB Programm, läuft komplett aus dem RAM: ≈ 97 KB von 264 KB) und `.bin`. Kein UF2, da es keinen BOOTSEL-Weg gibt.
+Das Programm wird beim Start aus dem Flash ins RAM kopiert (`copy_to_ram`); aus dem Flash (XIP, 16 KB Cache) war jeder Durchlauf der Hauptschleife durch Cache-Fehlgriffe deutlich langsamer.
 
 ## Flashen und Debug-Ausgabe (J-Link)
 
@@ -78,6 +79,20 @@ Mit einem Pico als Debugprobe: `probe-rs run --chip RP2040 build/poe_usb_hid_bri
    mDNS prüfen: `ping poe-hid-xxxxxx.local`; Windows `Resolve-DnsName poe-hid-xxxxxx.local`; Dienst suchen mit `dns-sd -B _poehid._tcp` (macOS/Bonjour) oder `avahi-browse -r _poehid._tcp` (Linux).
 3. Tastatur oder Scanner an J2 (auch über einen Hub) – getippte Zeichen erscheinen im TCP-Client.
 4. Befehle im Client: `status`, `usb off`, `usb on`.
+
+## Zeitbudget einer Ventil-Anfrage
+
+Gemessen mit `valve-scan --endurance` (ein Ventil, PC im WLAN): ≈ 118 Anfragen/s, Ø 4,3 ms am PC, Parameterbaum (98 KB, 56 Teile) ≈ 2,5 s.
+
+| Abschnitt | Zeit | Bemerkung |
+|---|---|---|
+| Befehl im W5500 → USB-Transfer gestartet | ≈ 20 µs | Hauptschleife ≈ 15 µs pro Durchlauf: im Leerlauf nur ein W5500-Register (`Sn_IR`), mDNS 1 ms, DHCP 10 ms |
+| USB: Befehl → Antwort (1 Report) | 1,1–2 ms | Interrupt-Endpunkte mit 1 ms Intervall: OUT im nächsten Frame, Antwort frühestens im Frame danach. SET_REPORT über EP0 (sofort) lehnt das Ventil ab |
+| USB: lange Antwort | ≈ 1,1 ms pro 54 Byte | ein Report pro Frame, `g:1E18`-Teil (1754 Byte, 33 Reports) ≈ 36 ms |
+| Antwort → TCP | < 1 ms | Senden blockiert nie (eigenes `tcp_flush()`, 8 KB TX-Puffer), Debug-`printf` (≈ 60 µs) erst nach dem Einreihen |
+| Netz + PC | Rest | WLAN-RTT 1–16 ms; über Kabel deutlich weniger |
+
+Die Firmware ist damit nahe an der Grenze, die USB Full Speed (1 ms Frames) und das Ventil vorgeben.
 
 ## Bekannte Grenzen / nächste Schritte
 

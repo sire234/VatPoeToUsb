@@ -88,7 +88,9 @@ flowchart TB
 ## Der Hauptablauf
 
 Die Bridge hat kein Betriebssystem. Ein einziger Ablauf erledigt alle Aufgaben nacheinander in einer endlosen Runde.
-Jede Aufgabe ist kurz und wartet nie lange, dadurch reagiert die Bridge trotzdem sofort.
+Jede Aufgabe ist kurz und wartet nie lange, dadurch reagiert die Bridge trotzdem sofort: Eine Runde dauert im Mittel
+etwa 15 Mikrosekunden. Dazu fragt die Bridge den Netzwerk-Chip in jeder Runde nur kurz, ob etwas angekommen ist, und
+schickt Antworten ab, ohne auf die Empfangsbestätigung des PCs zu warten.
 
 ```mermaid
 flowchart LR

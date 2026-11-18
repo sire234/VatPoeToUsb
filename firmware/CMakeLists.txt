@@ -54,7 +54,7 @@ target_include_directories(poe_usb_hid_bridge PRIVATE src)
 target_compile_options(poe_usb_hid_bridge PRIVATE -Wall -Wextra -Wno-unused-parameter)
 target_link_libraries(poe_usb_hid_bridge PRIVATE
     pico_stdlib
-    pico_unique_id
+    hardware_flash
     hardware_adc
     hardware_pio
     tinyusb_host
@@ -64,6 +64,10 @@ target_link_libraries(poe_usb_hid_bridge PRIVATE
 pico_enable_stdio_rtt(poe_usb_hid_bridge 1)
 pico_enable_stdio_uart(poe_usb_hid_bridge 0)
 pico_enable_stdio_usb(poe_usb_hid_bridge 0)
+
+# The whole program runs from RAM (copied from flash at boot, about 80 KB of 264 KB): from flash (XIP,
+# 16 KB cache) the main loop - TinyUSB, ioLibrary, printf - kept missing the cache.
+pico_set_binary_type(poe_usb_hid_bridge copy_to_ram)
 
 # ELF + BIN (flash via SWD); no UF2: there is no BOOTSEL / USB device boot path
 pico_add_bin_output(poe_usb_hid_bridge)
